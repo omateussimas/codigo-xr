@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contato | Código XR Capital</title>
+<meta name="description" content="Vamos entender o momento da sua empresa. Nossa primeira conversa tem como objetivo compreender o contexto, identificar desafios e avaliar como a Código XR pode fortalecer sua estrutura.">
+<meta name="theme-color" content="#0E121A">
+<link rel="icon" href="assets/brand/favicon.png" type="image/png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Contato | Código XR Capital">
+<meta property="og:description" content="Vamos entender o momento da sua empresa.">
+<meta property="og:image" content="assets/img/contato-sala.jpg">
+<meta property="og:locale" content="pt_BR">
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/Archetica-Light.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/MaximaNouva-Regular.woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/style.css">
+<script>document.documentElement.className += ' js';</script>
+</head>
+<body>
+
+<a class="pular" href="#conteudo">Ir para o conteúdo</a>
+<div class="progresso" aria-hidden="true"></div>
+
+<!-- ==================== HEADER ==================== -->
+<header class="topo">
+  <div class="wrap">
+    <div class="topo__barra">
+      <a class="topo__logo" href="index.html" aria-label="Código XR Capital, página inicial">
+        <img src="assets/brand/logo-azul.png" alt="Código XR Capital">
+      </a>
+      <nav class="nav" aria-label="Navegação principal">
+        <a class="nav__link" href="index.html">Home</a>
+        <a class="nav__link" href="sobre.html">Sobre Nós</a>
+        <a class="nav__link" href="blog.html">Blog</a>
+      </nav>
+      <div class="topo__acoes">
+        <a class="btn btn--sm" href="#formulario">
+          Conversa Executiva
+          <span class="btn__seta" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none"><path d="M3 11 11 3M11 3H4.5M11 3v6.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+        <button class="menu-btn" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="drawer">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="drawer" id="drawer">
+  <nav class="drawer__nav" aria-label="Navegação mobile">
+    <a class="drawer__link" style="--i:0" href="index.html">Home</a>
+    <a class="drawer__link" style="--i:1" href="sobre.html">Sobre Nós</a>
+    <a class="drawer__link" style="--i:2" href="blog.html">Blog</a>
+  </nav>
+  <div class="drawer__rodape">
+    <a class="btn btn--bloco" href="#formulario">
+      Agendar uma Conversa Executiva
+      <span class="btn__seta" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none"><path d="M3 11 11 3M11 3H4.5M11 3v6.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </a>
+    <p class="drawer__contato">
+      <a href="mailto:contato@codigoxr.com.br">contato@codigoxr.com.br</a><br>
+      Estruturação empresarial, governança e capital
+    </p>
+  </div>
+</div>
+
+<main id="conteudo">
+
+  <!-- ==================== DOBRA 1: HERO ==================== -->
+  <section class="hero-pagina">
+    <div class="wrap">
+      <nav class="migalhas" aria-label="Você está em">
+        <a href="index.html">Home</a> <span aria-hidden="true">/</span> <span>Contato</span>
+      </nav>
+      <div class="hero-pagina__grid">
+        <div>
+          <h1 class="hero-pagina__titulo">
+            <span data-fatiar>Vamos entender o momento</span>
+            <strong data-fatiar>da sua empresa.</strong>
+          </h1>
+        </div>
+        <div class="hero-pagina__texto" data-grupo=".1">
+          <p data-anima="sobe">Se sua empresa está crescendo, enfrentando novos desafios de gestão ou preparando um novo ciclo de expansão, queremos conhecer sua realidade.</p>
+          <p data-anima="sobe">Nossa primeira conversa tem como objetivo compreender o contexto, identificar os principais desafios e avaliar como a Código XR pode contribuir para fortalecer a estrutura da sua empresa.</p>
+          <div class="grupo-btn" style="margin-top:28px" data-anima="sobe">
+            <a class="btn btn--linha" href="#formulario">Agendar uma Conversa Executiva</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FORMULÁRIO ==================== -->
+  <section class="secao" id="formulario">
+    <div class="wrap">
+      <div class="contato-grid">
+
+        <div class="contato-form" data-anima="sobe">
+          <h2 class="contato-form__titulo">Solicite uma conversa executiva</h2>
+          <p class="contato-form__intro">Quanto mais contexto você compartilhar, mais objetiva será nossa primeira conversa. Todas as informações são tratadas com absoluto sigilo.</p>
+
+          <div class="form-status" role="status" aria-live="polite"></div>
+
+          <form class="form" data-form novalidate>
+
+            <div class="form__linha">
+              <div class="campo">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="nome" placeholder="Seu nome completo" autocomplete="name" required data-erro="Informe seu nome.">
+                <span class="campo__aviso"></span>
+              </div>
+              <div class="campo">
+                <label for="empresa">Empresa</label>
+                <input type="text" id="empresa" name="empresa" placeholder="Nome da empresa" autocomplete="organization" required data-erro="Informe o nome da empresa.">
+                <span class="campo__aviso"></span>
+              </div>
+            </div>
+
+            <div class="form__linha">
+              <div class="campo">
+                <label for="cargo">Cargo</label>
+                <input type="text" id="cargo" name="cargo" placeholder="Sócio, diretor, gestor" autocomplete="organization-title" required data-erro="Informe seu cargo.">
+                <span class="campo__aviso"></span>
+              </div>
+              <div class="campo">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" placeholder="nome@empresa.com.br" autocomplete="email" required data-erro="Informe um e-mail válido.">
+                <span class="campo__aviso"></span>
+              </div>
+            </div>
+
+            <div class="form__linha">
+              <div class="campo">
+                <label for="telefone">Telefone</label>
+                <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000 0000" autocomplete="tel" required data-erro="Informe um telefone para contato.">
+                <span class="campo__aviso"></span>
+              </div>
+              <div class="campo">
+                <label for="colaboradores">Quantos colaboradores possui sua empresa?</label>
+                <select id="colaboradores" name="colaboradores" required data-erro="Selecione uma faixa.">
+                  <option value="" selected disabled>Selecione</option>
+                  <option>Até 50</option>
+                  <option>50 a 100</option>
+                  <option>100 a 300</option>
+                  <option>300 a 500</option>
+                  <option>Acima de 500</option>
+                </select>
+                <span class="campo__aviso"></span>
+              </div>
+            </div>
+
+            <div class="campo">
+              <label for="segmento">Em qual segmento sua empresa atua?</label>
+              <select id="segmento" name="segmento" required data-erro="Selecione um segmento.">
+                <option value="" selected disabled>Selecione</option>
+                <option>Agronegócio</option>
+                <option>Indústria</option>
+                <option>Distribuição</option>
+                <option>Construção</option>
+                <option>Serviços</option>
+                <option>Outro</option>
+              </select>
+              <span class="campo__aviso"></span>
+            </div>
+
+            <fieldset class="campo" style="border:0">
+              <legend style="font-family:var(--f-cta);font-size:var(--t-micro);letter-spacing:.16em;text-transform:uppercase;color:var(--tinta-55);margin-bottom:14px">Qual o principal desafio da sua empresa hoje?</legend>
+              <div class="opcoes">
+                <label class="opcao"><input type="radio" name="desafio" value="Crescimento da empresa"><span>Crescimento da empresa</span></label>
+                <label class="opcao"><input type="radio" name="desafio" value="Desenvolvimento das lideranças"><span>Desenvolvimento das lideranças</span></label>
+                <label class="opcao"><input type="radio" name="desafio" value="Organização da gestão"><span>Organização da gestão</span></label>
+                <label class="opcao"><input type="radio" name="desafio" value="Governança"><span>Governança</span></label>
+                <label class="opcao"><input type="radio" name="desafio" value="Estrutura organizacional"><span>Estrutura organizacional</span></label>
+                <label class="opcao"><input type="radio" name="desafio" value="Expansão"><span>Expansão</span></label>
+                <label class="opcao"><input type="radio" name="desafio" value="Indicadores"><span>Indicadores</span></label>
+                <label class="opcao"><input type="radio" name="desafio" value="Planejamento estratégico"><span>Planejamento estratégico</span></label>
+                <label class="opcao"><input type="radio" name="desafio" value="Cultura e pessoas"><span>Cultura e pessoas</span></label>
+                <label class="opcao"><input type="radio" name="desafio" value="Estruturação de Capital"><span>Estruturação de Capital</span></label>
+                <label class="opcao"><input type="radio" name="desafio" value="Outro"><span>Outro</span></label>
+              </div>
+            </fieldset>
+
+            <fieldset class="campo" style="border:0">
+              <legend style="font-family:var(--f-cta);font-size:var(--t-micro);letter-spacing:.16em;text-transform:uppercase;color:var(--tinta-55);margin-bottom:14px">Em qual momento sua empresa está?</legend>
+              <div class="opcoes">
+                <label class="opcao"><input type="radio" name="momento" value="Crescendo rapidamente"><span>Crescendo rapidamente</span></label>
+                <label class="opcao"><input type="radio" name="momento" value="Expandindo unidades"><span>Expandindo unidades</span></label>
+                <label class="opcao"><input type="radio" name="momento" value="Reestruturando a operação"><span>Reestruturando a operação</span></label>
+                <label class="opcao"><input type="radio" name="momento" value="Preparando sucessão"><span>Preparando sucessão</span></label>
+                <label class="opcao"><input type="radio" name="momento" value="Buscando mais eficiência"><span>Buscando mais eficiência</span></label>
+                <label class="opcao"><input type="radio" name="momento" value="Avaliando novos investimentos"><span>Avaliando novos investimentos</span></label>
+              </div>
+            </fieldset>
+
+            <div class="campo">
+              <label for="mensagem">Conte um pouco sobre sua empresa e o desafio que está vivendo</label>
+              <textarea id="mensagem" name="mensagem" placeholder="História do negócio, momento atual, principais desafios e o que você espera dessa conversa." required data-erro="Conte um pouco sobre o momento da empresa."></textarea>
+              <span class="campo__aviso"></span>
+            </div>
+
+            <div class="campo">
+              <label for="origem">Como conheceu a Código XR?</label>
+              <input type="text" id="origem" name="origem" placeholder="Indicação, Instagram, evento, pesquisa">
+              <span class="campo__aviso"></span>
+            </div>
+
+            <p class="form__nota">Ao enviar, você concorda que a Código XR utilize estas informações apenas para avaliar a aderência entre os desafios apresentados e nossa forma de atuação. Nenhum dado é compartilhado com terceiros.</p>
+
+            <div class="grupo-btn">
+              <button class="btn" type="submit">
+                Solicitar uma Conversa Executiva
+                <span class="btn__seta" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none"><path d="M3 11 11 3M11 3H4.5M11 3v6.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <aside class="contato-lado">
+          <figure class="contato-foto" data-anima="escala">
+            <img src="assets/img/contato-sala.jpg" alt="Ambiente de reunião executiva" loading="lazy" width="1200" height="1400">
+            <figcaption>Compreender antes de propor qualquer caminho</figcaption>
+          </figure>
+
+          <div class="card card--escuro" data-anima="sobe">
+            <span class="card__rotulo">Fale direto conosco</span>
+            <div class="contato-dados" style="margin-top:16px">
+              <a href="mailto:contato@codigoxr.com.br">
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><rect x="1.8" y="3.4" width="12.4" height="9.2" rx="1.8"/><path d="m2.4 4.6 5.6 3.8 5.6-3.8"/></svg>
+                contato@codigoxr.com.br
+              </a>
+              <a href="https://www.instagram.com/rodpedreira/" target="_blank" rel="noopener">
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><rect x="2.2" y="2.2" width="11.6" height="11.6" rx="3.4"/><circle cx="8" cy="8" r="2.9"/><circle cx="11.6" cy="4.4" r=".8" fill="currentColor" stroke="none"/></svg>
+                Instagram Código XR Capital
+              </a>
+              <span>
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><circle cx="8" cy="8" r="6.2"/><path d="M8 4.4V8l2.4 1.6"/></svg>
+                Retorno em até dois dias úteis
+              </span>
+            </div>
+          </div>
+
+          <div class="card card--azul" data-anima="sobe">
+            <span class="card__rotulo">Sigilo</span>
+            <h3 class="card__titulo" style="font-size:1.15rem;margin-top:10px">Confiança é o ponto de partida</h3>
+            <p class="card__texto">Quando necessário, utilizamos acordos de confidencialidade e definimos claramente quem participa de cada etapa do processo.</p>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== DOBRA 2: QUANDO FAZ SENTIDO ==================== -->
+  <section class="secao secao--escura">
+    <div class="wrap">
+      <div class="duas-colunas">
+        <div>
+          <h2 class="h2" data-fatiar>Quando a Código XR faz sentido para sua empresa</h2>
+          <p class="texto" data-anima="sobe">Também apoiamos empresas em projetos de estruturação de capital, reorganização patrimonial e expansão quando essas iniciativas fazem parte de uma estratégia empresarial mais ampla.</p>
+          <p class="texto" data-anima="sobe">Se você se identifica com esse momento, provavelmente vale a pena conversarmos.</p>
+          <div class="grupo-btn" style="margin-top:30px" data-anima="sobe">
+            <a class="btn btn--azul" href="#formulario">
+              Solicitar uma Conversa Executiva
+              <span class="btn__seta" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none"><path d="M3 11 11 3M11 3H4.5M11 3v6.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </a>
+          </div>
+        </div>
+
+        <div class="perguntas" data-grupo=".08">
+          <p class="pergunta" data-anima="direita"><span aria-hidden="true">01</span> Sua empresa está crescendo mais rápido do que sua estrutura?</p>
+          <p class="pergunta" data-anima="direita"><span aria-hidden="true">02</span> Os fundadores continuam concentrando grande parte das decisões?</p>
+          <p class="pergunta" data-anima="direita"><span aria-hidden="true">03</span> As lideranças precisam assumir um papel mais estratégico?</p>
+          <p class="pergunta" data-anima="direita"><span aria-hidden="true">04</span> Você busca fortalecer a governança e desenvolver pessoas?</p>
+          <p class="pergunta" data-anima="direita"><span aria-hidden="true">05</span> Sua empresa está preparando um novo ciclo de crescimento?</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== DOBRA 3: O QUE ACONTECE DEPOIS ==================== -->
+  <section class="secao">
+    <div class="wrap">
+      <div class="cabecalho-secao" style="margin-bottom:clamp(32px,4vw,50px)">
+        <h2 class="h2" data-fatiar>O que acontece depois da nossa conversa</h2>
+      </div>
+
+      <div class="passos" data-grupo=".1">
+        <article class="passo" data-anima="sobe">
+          <h3>Análise inicial</h3>
+          <p>Após o envio das informações, nossa equipe realiza uma análise inicial para compreender o momento da empresa, o porte da operação e a natureza dos desafios apresentados.</p>
+        </article>
+        <article class="passo" data-anima="sobe">
+          <h3>Conversa executiva</h3>
+          <p>Quando identificamos aderência entre os desafios apresentados e nossa forma de atuação, agendamos uma conversa executiva para aprofundar o cenário, conhecer os objetivos da organização e avaliar os próximos passos.</p>
+        </article>
+        <article class="passo" data-anima="sobe">
+          <h3>Caminho construído em conjunto</h3>
+          <p>Cada empresa possui uma realidade diferente. Por isso, não trabalhamos com soluções padronizadas. Nosso primeiro compromisso é compreender antes de propor qualquer caminho.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== DOBRA 4 E 5: CONDUÇÃO E CONFIANÇA ==================== -->
+  <section class="secao secao--topo">
+    <div class="wrap">
+      <div class="grid grid--2" style="gap:clamp(16px,2vw,24px)" data-grupo=".12">
+
+        <article class="card" style="padding:clamp(28px,3.2vw,46px)" data-anima="sobe">
+          <span class="card__rotulo">Condução</span>
+          <h3 class="card__titulo" style="margin-top:16px">Como conduzimos cada projeto</h3>
+          <p class="card__texto">Antes de qualquer recomendação, buscamos compreender profundamente a realidade da empresa.</p>
+          <p class="card__texto">Nossa atuação parte do entendimento da estratégia, da cultura, da estrutura organizacional, das lideranças e dos objetivos do negócio.</p>
+          <p class="card__texto">Esse cuidado nos permite construir soluções alinhadas ao momento da empresa e gerar transformações que façam sentido para sua realidade.</p>
+        </article>
+
+        <article class="card card--escuro" style="padding:clamp(28px,3.2vw,46px)" data-anima="sobe">
+          <span class="card__rotulo">Sigilo e governança</span>
+          <h3 class="card__titulo" style="margin-top:16px">Confiança é o ponto de partida.</h3>
+          <p class="card__texto">Empresas compartilham conosco decisões estratégicas, desafios de gestão, informações financeiras e planos de crescimento.</p>
+          <p class="card__texto">Por isso, tratamos cada projeto com absoluto sigilo, ética e responsabilidade. Quando necessário, utilizamos acordos de confidencialidade e definimos claramente quem participa de cada etapa do processo.</p>
+          <p class="card__texto">Construir confiança faz parte da forma como conduzimos nosso trabalho.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== DOBRA 6: CTA FINAL ==================== -->
+  <section class="secao secao--fecho">
+    <div class="wrap">
+      <div class="cta-final" data-anima="escala">
+        <div class="cta-final__conteudo">
+          <img class="cta-final__icone" src="assets/brand/icone-azul.png" alt="" aria-hidden="true" width="44" height="28">
+          <h2 class="h2" data-fatiar>Toda empresa chega a um momento em que precisa evoluir sua forma de gerir.</h2>
+          <p class="texto" data-anima="sobe">Se você acredita que sua empresa está vivendo esse momento, teremos satisfação em conhecer sua realidade. Nossa primeira conversa é dedicada a compreender seus desafios e avaliar como a Código XR pode apoiar a construção de uma estrutura preparada para sustentar o próximo ciclo de crescimento.</p>
+          <div class="grupo-btn" data-anima="sobe">
+            <a class="btn" href="#formulario">
+              Agendar uma Conversa Executiva
+              <span class="btn__seta" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none"><path d="M3 11 11 3M11 3H4.5M11 3v6.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </a>
+            <a class="btn btn--linha" href="mailto:contato@codigoxr.com.br">Falar com um Especialista</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ==================== RODAPÉ ==================== -->
+<footer class="rodape">
+  <div class="wrap">
+    <div class="rodape__grid">
+      <div>
+        <a class="rodape__logo" href="index.html" aria-label="Código XR Capital">
+          <img src="assets/brand/logo-azul.png" alt="Código XR Capital" width="1214" height="212" loading="lazy">
+        </a>
+        <p class="rodape__sobre">Estruturamos empresas para que elas estejam preparadas para os próximos anos de crescimento.</p>
+        <div class="sociais">
+          <a href="https://www.instagram.com/rodpedreira/" target="_blank" rel="noopener" aria-label="Instagram da Código XR Capital"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="2.2" y="2.2" width="11.6" height="11.6" rx="3.4"/><circle cx="8" cy="8" r="2.9"/><circle cx="11.6" cy="4.4" r=".8" fill="currentColor" stroke="none"/></svg></a>
+        </div>
+      </div>
+
+      <div>
+        <h4>Navegação</h4>
+        <ul class="rodape__lista">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="sobre.html">Sobre Nós</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Atuação</h4>
+        <ul class="rodape__lista">
+          <li><a href="index.html#atuacao">Imersão e diagnóstico</a></li>
+          <li><a href="index.html#atuacao">Estruturação empresarial</a></li>
+          <li><a href="index.html#atuacao">Execução e consolidação</a></li>
+          <li><a href="sobre.html#metodo">Método XR</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Contato</h4>
+        <ul class="rodape__lista">
+          <li><a href="mailto:contato@codigoxr.com.br">contato@codigoxr.com.br</a></li>
+          <li><a href="#formulario">Agendar conversa executiva</a></li>
+          <li><a href="mailto:contato@codigoxr.com.br">Falar com um especialista</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="rodape__base">
+      <span>&copy; <span data-ano>2026</span> Código XR Capital. Todos os direitos reservados.</span>
+      <span>Confidencialidade, ética e responsabilidade em cada projeto</span>
+      <span class="rodape__creditos">Produzido por <a href="https://formabranding.com.br/" target="_blank" rel="noopener">Forma Branding</a></span>
+    </div>
+  </div>
+</footer>
+
+<button class="ao-topo" type="button" aria-label="Voltar ao topo">
+  <svg viewBox="0 0 16 16" fill="none"><path d="M8 13V3m0 0L4 7m4-4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
