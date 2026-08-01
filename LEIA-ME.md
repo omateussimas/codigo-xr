@@ -3,6 +3,16 @@
 Site estático (HTML, CSS e JavaScript puros). Basta subir a pasta inteira em qualquer
 hospedagem ou na Vercel. Não há build.
 
+**No ar:** https://codigo-xr.vercel.app
+**Repositório:** https://github.com/omateussimas/codigo-xr (branch `main`)
+
+Para publicar uma nova versão, dentro desta pasta:
+
+```
+git add -A && git commit -m "mensagem" && git push
+vercel --prod
+```
+
 ## Páginas
 
 | Arquivo | Página |
