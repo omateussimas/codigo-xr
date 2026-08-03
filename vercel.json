@@ -1,0 +1,8 @@
+{
+  "redirects": [
+    { "source": "/produtos-financeiros.html", "destination": "/capital.html#produtos", "permanent": true },
+    { "source": "/produtos-financeiros", "destination": "/capital.html#produtos", "permanent": true },
+    { "source": "/home-cash.html", "destination": "/capital.html#home-cash", "permanent": true },
+    { "source": "/home-cash", "destination": "/capital.html#home-cash", "permanent": true }
+  ]
+}

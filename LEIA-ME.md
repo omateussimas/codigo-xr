@@ -19,48 +19,56 @@ vercel --prod
 |---|---|
 | `index.html` | Home (9 dobras) |
 | `sobre.html` | Sobre Nós / Quem Somos |
-| `capital.html` | Acesso a Capital (área principal) |
-| `produtos-financeiros.html` | Loja de produtos financeiros (10 linhas) |
-| `home-cash.html` | Home Cash: como funciona e formulário de qualificação |
+| `capital.html` | Acesso a Capital (one page com toda a área) |
 | `blog.html` | Blog |
 | `contato.html` | Contato e formulário executivo |
 
 ## Área de Acesso a Capital
 
-O menu principal ganhou o item **Acesso a Capital**, com submenu de dez entradas
-(no desktop abre no hover e no foco pelo teclado; no mobile vira lista dentro do drawer).
+Toda a área vive em uma única página, `capital.html`, na ordem da diretriz:
 
-**Jornada 1, produtos financeiros.** `produtos-financeiros.html` reúne as dez linhas
-com âncora própria por produto (`#home-equity`, `#credito-empresarial`, `#agronegocio`,
-`#reestruturacao-dividas` e assim por diante). Cada seta leva para
-`contato.html?produto=NOME`, e o formulário de contato abre já sabendo qual linha
+1. Posicionamento e as três chamadas principais
+2. Os oito movimentos atendidos
+3. Jornada 01, produtos financeiros, com as dez linhas (`#produtos`)
+4. Jornada 02, Home Cash (`#home-cash`)
+5. As seis etapas da operação e o aviso institucional (`#home-cash-etapas`)
+6. Chamada "Seu imóvel pode ser uma fonte estratégica de capital"
+7. Formulário de qualificação do Home Cash (`#qualificacao`)
+8. Alavancagem e desalavancagem (`#movimentos`)
+9. Estruturas de capital sob medida (`#estruturadas`)
+10. Escolha por onde começar, com os três caminhos (`#caminhos`)
+11. Fechamento
+
+O item **Acesso a Capital** do menu abre um submenu de dez entradas, todas âncoras
+desta mesma página, com exceção de "Simule sua operação", que abre a plataforma
+externa em nova aba. No mobile o submenu vira lista dentro do drawer.
+
+Cada produto tem âncora própria (`#home-equity`, `#credito-empresarial`,
+`#agronegocio`, `#reestruturacao-dividas` e assim por diante) e a seta leva para
+`contato.html?produto=NOME`. O formulário de contato abre já sabendo qual linha
 o visitante veio pedir (função `iniciarProdutoNaUrl` em `assets/js/main.js`).
 
-**Jornada 2, Home Cash.** `home-cash.html` traz as seis etapas da operação, o aviso
-institucional e o formulário de qualificação com todos os campos pedidos, incluindo
-anexo de matrícula, IPTU e fotos, e o consentimento de tratamento de dados. A mensagem
-de retorno é definida no atributo `data-retorno` do `<form>`.
+O rodapé carrega a nota de compliance obrigatória (`.rodape__legal`).
 
-Nas três páginas da área o rodapé carrega a nota de compliance obrigatória
-(`.rodape__legal`), com a redação exata aprovada.
+As páginas `produtos-financeiros.html` e `home-cash.html` foram absorvidas por
+esta one page. O `vercel.json` mantém redirecionamento permanente das duas URLs
+antigas para as âncoras correspondentes.
 
 ### Pendências desta área
 
-1. **Loja virtual real.** Hoje `produtos-financeiros.html` funciona como a loja.
-   Quando a plataforma externa existir, basta trocar os links de
-   "Acessar produtos financeiros" e das setas de cada produto.
-2. **Simulador.** "Simular uma operação" e "Simule sua operação" abrem em nova aba
-   a plataforma Teddy360 do cliente. O bloco "Escolha por onde começar"
-   (`capital.html#caminhos`) continua na página como orientação de jornada.
-3. **Fotografia própria.** A área usa imagens do banco complementar já presente no
-   site (arquitetura corporativa, agronegócio e reunião executiva). Vale produzir
-   fotografia dedicada para mercado imobiliário e dados financeiros.
-4. **Destino dos formulários.** O de Home Cash valida e confirma no front-end, igual
-   ao de contato. Falta conectar ao destino final, inclusive o upload dos anexos.
-5. **Validação jurídica.** Antes de citar qualquer fundo, gestora ou administradora,
-   o time jurídico precisa aprovar nome, marca, descrição da operação, menções
-   regulatórias e responsabilidades de cada parte. Nenhuma instituição foi nomeada
-   no site por esse motivo.
+1. **Loja de produtos.** Os botões "Simular uma operação", "Acessar produtos
+   financeiros" e "Simule sua operação" abrem a plataforma Teddy360 do cliente.
+   As setas de cada linha continuam levando ao formulário de contato, para
+   capturar o lead qualificado antes do redirecionamento.
+2. **Fotografia própria.** A área usa imagens do banco complementar já presente
+   no site. Vale produzir fotografia dedicada para mercado imobiliário e dados
+   financeiros.
+3. **Destino do formulário.** O de Home Cash valida e confirma no front-end,
+   igual ao de contato. Falta conectar ao destino final, inclusive os anexos.
+4. **Validação jurídica.** Antes de citar qualquer fundo, gestora ou
+   administradora, o time jurídico precisa aprovar nome, marca, descrição da
+   operação, menções regulatórias e responsabilidades de cada parte. Nenhuma
+   instituição foi nomeada no site por esse motivo.
 
 ## Identidade
 
