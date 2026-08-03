@@ -114,8 +114,8 @@ Sobre Nós, Blog e Contato ainda usam banco de imagens complementar nas seções
 
 1. **Números institucionais** (`+25 anos`, `+40 empresas`, `+70 projetos`, `6 setores`, `100%`).
    Estão marcados no HTML com `<!-- AJUSTAR COM O CLIENTE -->` na Home e em Sobre Nós.
-2. **Biografias dos fundadores** (Rodrigo Pedreira e Tercilia Pinheiro): texto redigido a partir
-   do briefing, marcado com `<!-- CONTEÚDO A VALIDAR -->`. Certificações ainda não foram informadas.
+2. ~~Biografias dos fundadores~~: texto e formação de Rodrigo Pedreira e Tercilia Pinheiro
+   já validados pelo cliente e publicados.
 3. **Foto institucional dos dois fundadores juntos** na dobra de abertura de Sobre Nós
    (`assets/img/fundadores.jpg` é temporária).
 4. **Telefone e endereço**: ainda não informados. O e-mail já é o definitivo,
