@@ -49,9 +49,9 @@ Nas três páginas da área o rodapé carrega a nota de compliance obrigatória
 1. **Loja virtual real.** Hoje `produtos-financeiros.html` funciona como a loja.
    Quando a plataforma externa existir, basta trocar os links de
    "Acessar produtos financeiros" e das setas de cada produto.
-2. **Simulador.** "Simular uma operação" leva ao bloco de escolha de caminho
-   (`capital.html#caminhos`). Não foi criada calculadora: sem taxas e parâmetros
-   definidos, qualquer número exibido soaria como promessa de condição.
+2. **Simulador.** "Simular uma operação" e "Simule sua operação" abrem em nova aba
+   a plataforma Teddy360 do cliente. O bloco "Escolha por onde começar"
+   (`capital.html#caminhos`) continua na página como orientação de jornada.
 3. **Fotografia própria.** A área usa imagens do banco complementar já presente no
    site (arquitetura corporativa, agronegócio e reunião executiva). Vale produzir
    fotografia dedicada para mercado imobiliário e dados financeiros.
@@ -118,7 +118,8 @@ Sobre Nós, Blog e Contato ainda usam banco de imagens complementar nas seções
    do briefing, marcado com `<!-- CONTEÚDO A VALIDAR -->`. Certificações ainda não foram informadas.
 3. **Foto institucional dos dois fundadores juntos** na dobra de abertura de Sobre Nós
    (`assets/img/fundadores.jpg` é temporária).
-4. **E-mail, telefone e endereço**: hoje `contato@codigoxr.com.br`. O Instagram já aponta para
+4. **Telefone e endereço**: ainda não informados. O e-mail já é o definitivo,
+   `rodrigopedreira@codigoxrcapital.com.br`. O Instagram já aponta para
    `instagram.com/rodpedreira`. O LinkedIn foi retirado do site.
 5. **Artigos do blog**: títulos e resumos são exemplos; os links apontam para `#`.
 6. **Formulário**: valida e confirma no front-end. Falta conectar ao destino final
