@@ -120,7 +120,8 @@ Sobre Nós, Blog e Contato ainda usam banco de imagens complementar nas seções
 
 ## Pontos que dependem do cliente
 
-1. **Números institucionais** (`+25 anos`, `+40 empresas`, `+70 projetos`, `6 setores`, `100%`).
+1. **Números institucionais** (`+25 anos`, `+70 projetos`, `6 setores`, `100%`). O dado de
+   empresas acompanhadas foi retirado do site a pedido do cliente.
    Estão marcados no HTML com `<!-- AJUSTAR COM O CLIENTE -->` na Home e em Sobre Nós.
 2. ~~Biografias dos fundadores~~: texto e formação de Rodrigo Pedreira e Tercilia Pinheiro
    já validados pelo cliente e publicados.

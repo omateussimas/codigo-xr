@@ -930,6 +930,12 @@ a.bolha:hover, a.bolha:focus-visible { background: var(--laranja); color: #fff; 
   gap: var(--gap);
   margin-top: clamp(54px, 6vw, 84px);
 }
+/* Variações de contagem. Como classe, e não em style inline,
+   para as regras responsivas mais abaixo continuarem valendo. */
+.numeros--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.numeros--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+/* número ímpar em duas colunas: o último ocupa a linha inteira */
+.numeros--2 > .numeros__item:last-child:nth-child(odd) { grid-column: 1 / -1; }
 .numeros__item {
   padding: clamp(20px, 2.2vw, 30px);
   border-radius: var(--r-md);
@@ -2069,6 +2075,8 @@ a.bolha:hover, a.bolha:focus-visible { background: var(--laranja); color: #fff; 
 @media (max-width: 1180px) {
   .balao__grade { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .numeros { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  /* em duas colunas, um numero impar sobrando ocupa a linha toda */
+  .numeros > .numeros__item:last-child:nth-child(odd) { grid-column: 1 / -1; }
   .diferenciais { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .rodape__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
