@@ -19,8 +19,48 @@ vercel --prod
 |---|---|
 | `index.html` | Home (9 dobras) |
 | `sobre.html` | Sobre Nós / Quem Somos |
+| `capital.html` | Acesso a Capital (área principal) |
+| `produtos-financeiros.html` | Loja de produtos financeiros (10 linhas) |
+| `home-cash.html` | Home Cash: como funciona e formulário de qualificação |
 | `blog.html` | Blog |
 | `contato.html` | Contato e formulário executivo |
+
+## Área de Acesso a Capital
+
+O menu principal ganhou o item **Acesso a Capital**, com submenu de dez entradas
+(no desktop abre no hover e no foco pelo teclado; no mobile vira lista dentro do drawer).
+
+**Jornada 1, produtos financeiros.** `produtos-financeiros.html` reúne as dez linhas
+com âncora própria por produto (`#home-equity`, `#credito-empresarial`, `#agronegocio`,
+`#reestruturacao-dividas` e assim por diante). Cada seta leva para
+`contato.html?produto=NOME`, e o formulário de contato abre já sabendo qual linha
+o visitante veio pedir (função `iniciarProdutoNaUrl` em `assets/js/main.js`).
+
+**Jornada 2, Home Cash.** `home-cash.html` traz as seis etapas da operação, o aviso
+institucional e o formulário de qualificação com todos os campos pedidos, incluindo
+anexo de matrícula, IPTU e fotos, e o consentimento de tratamento de dados. A mensagem
+de retorno é definida no atributo `data-retorno` do `<form>`.
+
+Nas três páginas da área o rodapé carrega a nota de compliance obrigatória
+(`.rodape__legal`), com a redação exata aprovada.
+
+### Pendências desta área
+
+1. **Loja virtual real.** Hoje `produtos-financeiros.html` funciona como a loja.
+   Quando a plataforma externa existir, basta trocar os links de
+   "Acessar produtos financeiros" e das setas de cada produto.
+2. **Simulador.** "Simular uma operação" leva ao bloco de escolha de caminho
+   (`capital.html#caminhos`). Não foi criada calculadora: sem taxas e parâmetros
+   definidos, qualquer número exibido soaria como promessa de condição.
+3. **Fotografia própria.** A área usa imagens do banco complementar já presente no
+   site (arquitetura corporativa, agronegócio e reunião executiva). Vale produzir
+   fotografia dedicada para mercado imobiliário e dados financeiros.
+4. **Destino dos formulários.** O de Home Cash valida e confirma no front-end, igual
+   ao de contato. Falta conectar ao destino final, inclusive o upload dos anexos.
+5. **Validação jurídica.** Antes de citar qualquer fundo, gestora ou administradora,
+   o time jurídico precisa aprovar nome, marca, descrição da operação, menções
+   regulatórias e responsabilidades de cada parte. Nenhuma instituição foi nomeada
+   no site por esse motivo.
 
 ## Identidade
 

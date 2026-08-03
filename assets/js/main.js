@@ -315,9 +315,15 @@
   /* ------------------------------------------------------------------
      10. FORMULÁRIO
      ------------------------------------------------------------------ */
+  var RETORNO_PADRAO = 'Recebemos suas informações. Nossa equipe fará uma análise inicial e retornará o contato para agendar a conversa executiva.';
+
   function iniciarFormulario() {
-    var form = $('[data-form]');
-    if (!form) return;
+    $$('[data-form]').forEach(prepararFormulario);
+  }
+
+  /* Cada formulário cuida do próprio aviso de retorno. A mensagem pode ser
+     trocada por página com o atributo data-retorno no <form>. */
+  function prepararFormulario(form) {
     var status = $('.form-status', form.parentNode) || $('.form-status');
 
     function validarCampo(campo) {
@@ -360,7 +366,7 @@
       var botao = $('button[type="submit"]', form);
       if (botao) botao.setAttribute('disabled', 'disabled');
       if (status) {
-        status.textContent = 'Recebemos suas informações. Nossa equipe fará uma análise inicial e retornará o contato para agendar a conversa executiva.';
+        status.textContent = form.getAttribute('data-retorno') || RETORNO_PADRAO;
         status.classList.add('is-visivel');
         status.scrollIntoView({ behavior: poucoMovimento ? 'auto' : 'smooth', block: 'center' });
       }
@@ -370,14 +376,43 @@
   }
 
   /* ------------------------------------------------------------------
-     11. ANO ATUAL NO RODAPÉ
+     11. PRODUTO VINDO DA LOJA
+     Quando o visitante chega de produtos-financeiros.html?produto=X,
+     o formulário de contato já abre sabendo o que ele veio pedir.
+     ------------------------------------------------------------------ */
+  function iniciarProdutoNaUrl() {
+    var produto;
+    try {
+      produto = new URLSearchParams(window.location.search).get('produto');
+    } catch (e) { return; }
+    if (!produto) return;
+
+    var mensagem = $('#mensagem');
+    if (mensagem && !mensagem.value) {
+      mensagem.value = 'Tenho interesse na linha de ' + produto + '. ';
+    }
+
+    var aviso = $('.contato-form__intro');
+    if (aviso) {
+      aviso.textContent = 'Você chegou pela linha de ' + produto +
+        '. Complete os campos abaixo para que nossa mesa de originação avalie o enquadramento da operação.';
+    }
+
+    var alvo = $('#formulario') || $('[data-form]');
+    if (alvo) {
+      alvo.scrollIntoView({ behavior: poucoMovimento ? 'auto' : 'smooth', block: 'start' });
+    }
+  }
+
+  /* ------------------------------------------------------------------
+     12. ANO ATUAL NO RODAPÉ
      ------------------------------------------------------------------ */
   function iniciarAno() {
     $$('[data-ano]').forEach(function (el) { el.textContent = new Date().getFullYear(); });
   }
 
   /* ------------------------------------------------------------------
-     12. BOOT
+     13. BOOT
      ------------------------------------------------------------------ */
   function iniciar() {
     raiz.classList.add('js');
@@ -391,6 +426,7 @@
     iniciarParallax();
     iniciarFiltros();
     iniciarFormulario();
+    iniciarProdutoNaUrl();
     iniciarAno();
   }
 

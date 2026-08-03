@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Acesso a Capital | Código XR Capital</title>
+<meta name="description" content="A Código XR Capital conecta empresas e proprietários de ativos a bancos, fundos, securitizadoras e gestoras para acessar crédito, gerar liquidez, reorganizar dívidas e financiar projetos.">
+<meta name="theme-color" content="#0E121A">
+<link rel="icon" href="assets/brand/favicon.png" type="image/png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Acesso a Capital | Código XR Capital">
+<meta property="og:description" content="Capital para crescer. Inteligência para reorganizar.">
+<meta property="og:image" content="assets/img/artigo-capital.jpg">
+<meta property="og:locale" content="pt_BR">
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/Archetica-Light.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/MaximaNouva-Regular.woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/style.css">
+<script>document.documentElement.className += ' js';</script>
+</head>
+<body>
+
+<a class="pular" href="#conteudo">Ir para o conteúdo</a>
+<div class="progresso" aria-hidden="true"></div>
+
+<!-- ==================== HEADER ==================== -->
+<header class="topo">
+  <div class="wrap">
+    <div class="topo__barra">
+      <a class="topo__logo" href="index.html" aria-label="Código XR Capital, página inicial">
+        <img src="assets/brand/logo-azul.png" alt="Código XR Capital">
+      </a>
+      <nav class="nav" aria-label="Navegação principal">
+        <a class="nav__link" href="index.html">Home</a>
+        <a class="nav__link" href="sobre.html">Sobre Nós</a>
+        <div class="nav__item">
+          <a class="nav__link is-ativo nav__link--menu" href="capital.html">Acesso a Capital <svg viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M2 3.8 5 6.8l3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="submenu">
+          <a class="submenu__link" href="produtos-financeiros.html">Produtos financeiros</a>
+          <a class="submenu__link" href="produtos-financeiros.html#home-equity">Home Equity</a>
+          <a class="submenu__link" href="home-cash.html">Home Cash</a>
+          <span class="submenu__sep" aria-hidden="true"></span>
+          <a class="submenu__link" href="produtos-financeiros.html#credito-empresarial">Crédito empresarial</a>
+          <a class="submenu__link" href="produtos-financeiros.html#credito-imobiliario">Crédito imobiliário</a>
+          <a class="submenu__link" href="produtos-financeiros.html#credito-construcao">Crédito para construção</a>
+          <a class="submenu__link" href="produtos-financeiros.html#agronegocio">Agronegócio</a>
+          <a class="submenu__link" href="produtos-financeiros.html#reestruturacao-dividas">Reestruturação de dívidas</a>
+          <span class="submenu__sep" aria-hidden="true"></span>
+          <a class="submenu__link" href="capital.html#estruturadas">Soluções estruturadas</a>
+          <a class="submenu__link" href="capital.html#caminhos">Simule sua operação</a>
+          </div>
+        </div>
+        <a class="nav__link" href="blog.html">Blog</a>
+      </nav>
+      <div class="topo__acoes">
+        <a class="btn btn--sm" href="contato.html">
+          Conversa Executiva
+          <span class="btn__seta" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none"><path d="M3 11 11 3M11 3H4.5M11 3v6.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+        <button class="menu-btn" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="drawer">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="drawer" id="drawer">
+  <nav class="drawer__nav" aria-label="Navegação mobile">
+    <a class="drawer__link" style="--i:0" href="index.html">Home</a>
+    <a class="drawer__link" style="--i:1" href="sobre.html">Sobre Nós</a>
+    <a class="drawer__link" style="--i:2" href="capital.html">Acesso a Capital</a>
+    <div class="drawer__sub" style="--i:3">
+      <a href="produtos-financeiros.html">Produtos financeiros</a>
+      <a href="produtos-financeiros.html#home-equity">Home Equity</a>
+      <a href="home-cash.html">Home Cash</a>
+      <a href="produtos-financeiros.html#credito-empresarial">Crédito empresarial</a>
+      <a href="produtos-financeiros.html#credito-imobiliario">Crédito imobiliário</a>
+      <a href="produtos-financeiros.html#credito-construcao">Crédito para construção</a>
+      <a href="produtos-financeiros.html#agronegocio">Agronegócio</a>
+      <a href="produtos-financeiros.html#reestruturacao-dividas">Reestruturação de dívidas</a>
+      <a href="capital.html#estruturadas">Soluções estruturadas</a>
+      <a href="capital.html#caminhos">Simule sua operação</a>
+    </div>
+    <a class="drawer__link" style="--i:4" href="blog.html">Blog</a>
+  </nav>
+  <div class="drawer__rodape">
+    <a class="btn btn--bloco" href="contato.html">
+      Agendar uma Conversa Executiva
+      <span class="btn__seta" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none"><path d="M3 11 11 3M11 3H4.5M11 3v6.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </a>
+    <p class="drawer__contato">
+      <a href="mailto:contato@codigoxr.com.br">contato@codigoxr.com.br</a><br>
+      Estruturação empresarial, governança e capital
+    </p>
+  </div>
+</div>
+
+<main id="conteudo">
+
+  <!-- ==================== HERO ==================== -->
+  <section class="hero-pagina">
+    <div class="wrap">
+      <nav class="migalhas" aria-label="Você está em">
+        <a href="index.html">Home</a> <span aria-hidden="true">/</span> <span>Acesso a Capital</span>
+      </nav>
+      <div class="hero-pagina__grid hero-pagina__grid--largo">
+        <div>
+          <h1 class="hero-pagina__titulo">
+            <span data-fatiar>Capital para crescer.</span>
+            <strong data-fatiar>Inteligência para reorganizar.</strong>
+          </h1>
+        </div>
+        <div class="hero-pagina__texto" data-grupo=".1">
+          <p data-anima="sobe">A Código XR conecta empresas e proprietários de ativos às principais alternativas de crédito, liquidez e estruturação financeira do mercado.</p>
+          <p data-anima="sobe">Por meio de uma rede de bancos, fundos de investimento, securitizadoras, gestoras e parceiros institucionais, desenvolvemos soluções personalizadas para quem precisa acessar capital, reorganizar dívidas, liberar recursos imobilizados ou financiar novos projetos.</p>
+          <p data-anima="sobe">Nossa atuação combina tecnologia, inteligência executiva e engenharia financeira para encontrar a estrutura mais adequada para cada momento do cliente.</p>
+          <div class="trilho" data-grupo=".08">
+            <a class="btn" href="#caminhos" data-anima="sobe">
+              Simular uma operação
+              <span class="btn__seta" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none"><path d="M3 11 11 3M11 3H4.5M11 3v6.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </a>
+            <a class="btn btn--linha" href="produtos-financeiros.html" data-anima="sobe">Conhecer os produtos financeiros</a>
+            <a class="btn btn--linha" href="contato.html" data-anima="sobe">Falar com um especialista</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== O QUE RESOLVEMOS ==================== -->
+  <section class="secao">
+    <div class="wrap">
+      <div class="cabecalho-secao">
+        <h2 class="h2" data-fatiar>Uma plataforma de engenharia financeira, acesso a crédito e estruturação de capital.</h2>
+        <p class="lead" data-anima="sobe" style="--atraso:.2s">Atendemos empresas, produtores, investidores e proprietários de imóveis que precisam de uma estrutura financeira à altura do momento que estão vivendo.</p>
+      </div>
+
+      <div class="grid grid--4" style="margin-top:clamp(40px,5vw,64px)" data-grupo=".07">
+        <article class="card" data-anima="sobe">
+          <h3 class="card__titulo" style="font-size:1.16rem">Alavancagem financeira</h3>
+          <p class="card__texto">Capital para expandir a operação, comprar ativos e antecipar oportunidades.</p>
+        </article>
+        <article class="card" data-anima="sobe">
+          <h3 class="card__titulo" style="font-size:1.16rem">Desalavancagem e reorganização de passivos</h3>
+          <p class="card__texto">Consolidação de contratos e troca de dívidas caras por estruturas mais eficientes.</p>
+        </article>
+        <article class="card" data-anima="sobe">
+          <h3 class="card__titulo" style="font-size:1.16rem">Redução do custo das dívidas</h3>
+          <p class="card__texto">Operações desenhadas para reduzir o peso financeiro do endividamento atual.</p>
+        </article>
+        <article class="card" data-anima="sobe">
+          <h3 class="card__titulo" style="font-size:1.16rem">Alongamento de prazos</h3>
+          <p class="card__texto">Prazos compatíveis com a geração de caixa real do negócio.</p>
+        </article>
+        <article class="card" data-anima="sobe">
+          <h3 class="card__titulo" style="font-size:1.16rem">Geração de liquidez</h3>
+          <p class="card__texto">Transformação de ativos, contratos e recebíveis em recursos disponíveis.</p>
+        </article>
+        <article class="card" data-anima="sobe">
+          <h3 class="card__titulo" style="font-size:1.16rem">Liberação de capital imobilizado</h3>
+          <p class="card__texto">Patrimônio parado convertido em capital produtivo para a empresa.</p>
+        </article>
+        <article class="card" data-anima="sobe">
+          <h3 class="card__titulo" style="font-size:1.16rem">Financiamento de projetos e expansão</h3>
+          <p class="card__texto">Funding para novas unidades, obras, aquisições e capacidade produtiva.</p>
+        </article>
+        <article class="card" data-anima="sobe">
+          <h3 class="card__titulo" style="font-size:1.16rem">Reestruturação financeira e patrimonial</h3>
+          <p class="card__texto">Reorganização de dívidas, garantias e ativos para recuperar o controle do caixa.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== JORNADA 1: PRODUTOS FINANCEIROS ==================== -->
+  <section class="secao secao--topo">
+    <div class="wrap">
+      <article class="jornada" data-anima="sobe">
+        <div>
+          <h2 class="h2" style="font-size:var(--t-h3)" data-fatiar>Encontre a solução financeira adequada ao seu objetivo</h2>
+          <p class="texto">Acesse nosso marketplace de soluções financeiras e encontre alternativas para aquisição, expansão, geração de liquidez, reorganização de dívidas e utilização estratégica do patrimônio.</p>
+          <ul class="jornada__lista">
+            <li>Dez linhas de crédito organizadas por objetivo, não por produto bancário.</li>
+            <li>Comparação das estruturas disponíveis para o seu perfil de garantia.</li>
+            <li>Solicitação enviada direto para a mesa de originação da Código XR.</li>
+          </ul>
+          <div class="grupo-btn" style="margin-top:clamp(26px,3vw,36px)">
+            <a class="btn" href="produtos-financeiros.html">
+              Acessar produtos financeiros
+              <span class="btn__seta" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none"><path d="M3 11 11 3M11 3H4.5M11 3v6.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </a>
+          </div>
+        </div>
+        <div class="jornada__midia">
+          <img src="assets/img/artigo-capital.jpg" alt="Acordo institucional de acesso a capital" loading="lazy" width="1200" height="900">
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ==================== JORNADA 2: HOME CASH ==================== -->
+  <section class="secao secao--topo">
+    <div class="wrap">
+      <article class="jornada jornada--escura" data-anima="escala">
+        <div>
+          <h2 class="h2" style="font-size:var(--t-h3)" data-fatiar>Home Cash: transforme seu imóvel em capital sem perder o direito de recompra</h2>
+          <p class="lead">Uma alternativa de liquidez para proprietários de imóveis que precisam acessar capital rapidamente, reduzir dívidas ou reorganizar sua vida financeira.</p>
+          <p class="texto">O Home Cash é uma estrutura de venda temporária do imóvel com possibilidade contratual de recompra. A operação permite que o proprietário transforme parte do valor do imóvel em liquidez, permanecendo no imóvel mediante pagamento mensal e tendo o direito de recomprá-lo dentro do prazo estabelecido em contrato.</p>
+          <ul class="jornada__lista">
+            <li>Quitar financiamentos e dívidas com parcelas elevadas.</li>
+            <li>Reduzir o comprometimento mensal da renda.</li>
+            <li>Gerar capital para empresas e novos investimentos.</li>
+            <li>Financiar projetos imobiliários.</li>
+            <li>Reorganizar passivos pessoais ou empresariais.</li>
+            <li>Evitar a venda definitiva do patrimônio.</li>
+            <li>Criar uma saída financeira durante processos de reestruturação.</li>
+          </ul>
+          <div class="grupo-btn" style="margin-top:clamp(26px,3vw,36px)">
+            <a class="btn" href="home-cash.html#qualificacao">
+              Solicitar análise para Home Cash
+              <span class="btn__seta" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none"><path d="M3 11 11 3M11 3H4.5M11 3v6.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </a>
+            <a class="btn btn--linha" href="home-cash.html">Entender como funciona</a>
+          </div>
+        </div>
+        <div class="jornada__midia">
+          <img src="assets/img/artigo-expansao.jpg" alt="Arquitetura corporativa e patrimônio imobiliário" loading="lazy" width="1200" height="900">
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ==================== ALAVANCAGEM E DESALAVANCAGEM ==================== -->
+  <section class="secao secao--topo" id="movimentos">
+    <div class="wrap">
+      <div class="cabecalho-secao" style="margin-bottom:clamp(34px,4vw,54px)">
+        <h2 class="h2" data-fatiar>Dois movimentos, uma mesma engenharia.</h2>
+        <p class="lead" data-anima="sobe" style="--atraso:.2s">Toda operação de capital atende a um destes dois objetivos: colocar recursos para trabalhar ou reorganizar o que já está comprometido.</p>
+      </div>
+
+      <div class="movimentos" data-grupo=".12">
+
+        <article class="movimento" data-anima="sobe">
+          <h3 class="movimento__titulo">Alavancagem financeira</h3>
+          <p class="movimento__intro">Soluções para empresas e investidores que desejam acessar capital para:</p>
+          <ul class="movimento__lista">
+            <li>Expandir operações</li>
+            <li>Comprar ativos</li>
+            <li>Financiar novos projetos</li>
+            <li>Adquirir imóveis</li>
+            <li>Aumentar capacidade produtiva</li>
+            <li>Investir em estoques</li>
+            <li>Antecipar oportunidades</li>
+            <li>Realizar aquisições</li>
+          </ul>
+          <p class="movimento__frase">Use o crédito como instrumento de crescimento.</p>
+        </article>
+
+        <article class="movimento movimento--escuro" data-anima="sobe">
+          <h3 class="movimento__titulo">Desalavancagem financeira</h3>
+          <p class="movimento__intro">Soluções para clientes que precisam:</p>
+          <ul class="movimento__lista">
+            <li>Reduzir parcelas mensais</li>
+            <li>Alongar dívidas</li>
+            <li>Trocar dívidas caras por estruturas mais eficientes</li>
+            <li>Consolidar diferentes contratos</li>
+            <li>Liberar garantias</li>
+            <li>Vender ou monetizar ativos</li>
+            <li>Reorganizar passivos</li>
+            <li>Recuperar capacidade de investimento</li>
+          </ul>
+          <p class="movimento__frase">Reorganize o passivo para recuperar o controle do caixa.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SOLUÇÕES ESTRUTURADAS ==================== -->
+  <section class="secao secao--escura" id="estruturadas">
+    <div class="wrap">
+      <div class="duas-colunas" style="align-items:end;margin-bottom:clamp(34px,4vw,52px)">
+        <div>
+          <h2 class="h2" data-fatiar>Estruturas de capital sob medida</h2>
+        </div>
+        <div>
+          <p class="texto" data-anima="sobe">Além dos produtos disponíveis na loja virtual, conduzimos operações que exigem análise consultiva, modelagem própria e articulação com fundos, bancos e gestoras.</p>
+        </div>
+      </div>
+
+      <ul class="estruturas" data-grupo=".04">
+        <li data-anima="sobe"><b>01</b> Reestruturação de dívidas empresariais</li>
+        <li data-anima="sobe"><b>02</b> Renegociação com bancos e credores</li>
+        <li data-anima="sobe"><b>03</b> Operações com fundos de investimento</li>
+        <li data-anima="sobe"><b>04</b> Securitização de recebíveis</li>
+        <li data-anima="sobe"><b>05</b> Estruturação de FIDC, CRI e CRA</li>
+        <li data-anima="sobe"><b>06</b> Funding para empresas do agronegócio</li>
+        <li data-anima="sobe"><b>07</b> Operações com garantias imobiliárias</li>
+        <li data-anima="sobe"><b>08</b> Sale and leaseback imobiliário</li>
+        <li data-anima="sobe"><b>09</b> Financiamento de projetos</li>
+        <li data-anima="sobe"><b>10</b> Estruturação de capital em reais ou moeda estrangeira</li>
+        <li data-anima="sobe"><b>11</b> Turnaround e reorganização financeira</li>
+        <li data-anima="sobe"><b>12</b> Monetização de ativos e patrimônios</li>
+      </ul>
+
+      <div class="grupo-btn" style="margin-top:clamp(34px,4vw,50px)" data-anima="sobe">
+        <a class="btn" href="contato.html">
+          Solicitar diagnóstico financeiro
+          <span class="btn__seta" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none"><path d="M3 11 11 3M11 3H4.5M11 3v6.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ESCOLHA DE CAMINHO ==================== -->
+  <section class="secao secao--escura" id="caminhos">
+    <div class="wrap">
+      <div class="cabecalho-secao cabecalho-secao--centro" style="margin-bottom:clamp(34px,4vw,54px)">
+        <h2 class="h2" data-fatiar>Escolha por onde começar</h2>
+        <p class="lead" data-anima="sobe" style="--atraso:.2s">Três caminhos para chegar até a estrutura certa. Você decide o nível de profundidade da primeira conversa.</p>
+      </div>
+
+      <div class="caminhos" data-grupo=".11">
+
+        <article class="caminho" data-anima="sobe">
+          <span class="caminho__num">Caminho 01</span>
+          <h3 class="caminho__titulo">Buscar um produto financeiro</h3>
+          <p class="caminho__texto">Você já sabe qual solução procura. Compare as linhas disponíveis na loja e envie sua solicitação direto para a mesa de originação.</p>
+          <a class="link-seta" href="produtos-financeiros.html">Ver produtos financeiros
+            <svg viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 11 11 3M11 3H4.5M11 3v6.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </article>
+
+        <article class="caminho" data-anima="sobe">
+          <span class="caminho__num">Caminho 02</span>
+          <h3 class="caminho__titulo">Solicitar uma estrutura de Home Cash</h3>
+          <p class="caminho__texto">Você tem um imóvel e precisa de liquidez sem vender o patrimônio em definitivo. Preencha a qualificação e receba a análise preliminar.</p>
+          <a class="link-seta" href="home-cash.html#qualificacao">Iniciar qualificação
+            <svg viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 11 11 3M11 3H4.5M11 3v6.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </article>
+
+        <article class="caminho" data-anima="sobe">
+          <span class="caminho__num">Caminho 03</span>
+          <h3 class="caminho__titulo">Falar com a Código XR</h3>
+          <p class="caminho__texto">Sua operação envolve mais de um ativo, mais de um credor ou uma reorganização completa. Vamos conversar antes de desenhar qualquer estrutura.</p>
+          <a class="link-seta" href="contato.html">Falar com um especialista
+            <svg viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 11 11 3M11 3H4.5M11 3v6.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </article>
+
+      </div>
+
+      <div class="aviso" style="margin-top:clamp(36px,4.4vw,56px)" data-anima="sobe">
+        <h3>Como atuamos nas operações</h3>
+        <p>A participação da Código XR consiste na originação, análise, modelagem e estruturação da operação, em conjunto com os parceiros financeiros e imobiliários responsáveis pela transação. Toda operação é realizada mediante análise do ativo, da documentação e das condições da estrutura.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CTA FINAL ==================== -->
+  <section class="secao secao--fecho">
+    <div class="wrap">
+      <div class="cta-final" data-anima="escala">
+        <div class="cta-final__conteudo">
+          <img class="cta-final__icone" src="assets/brand/icone-azul.png" alt="" aria-hidden="true" width="44" height="28">
+          <h2 class="h2" data-fatiar>Capital é consequência de uma boa estrutura.</h2>
+          <p class="texto" data-anima="sobe">Antes de indicar qualquer linha, entendemos o momento da empresa, a composição do passivo, os ativos disponíveis e o objetivo real por trás da necessidade de capital. É essa leitura que define qual estrutura faz sentido.</p>
+          <div class="grupo-btn" data-anima="sobe">
+            <a class="btn" href="contato.html">
+              Solicitar diagnóstico financeiro
+              <span class="btn__seta" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none"><path d="M3 11 11 3M11 3H4.5M11 3v6.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </a>
+            <a class="btn btn--linha" href="produtos-financeiros.html">Ver produtos financeiros</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ==================== RODAPÉ ==================== -->
+<footer class="rodape">
+  <div class="wrap">
+    <div class="rodape__grid">
+      <div>
+        <a class="rodape__logo" href="index.html" aria-label="Código XR Capital">
+          <img src="assets/brand/logo-azul.png" alt="Código XR Capital" width="1214" height="212" loading="lazy">
+        </a>
+        <p class="rodape__sobre">Estruturamos empresas para que elas estejam preparadas para os próximos anos de crescimento.</p>
+        <div class="sociais">
+          <a href="https://www.instagram.com/rodpedreira/" target="_blank" rel="noopener" aria-label="Instagram da Código XR Capital"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="2.2" y="2.2" width="11.6" height="11.6" rx="3.4"/><circle cx="8" cy="8" r="2.9"/><circle cx="11.6" cy="4.4" r=".8" fill="currentColor" stroke="none"/></svg></a>
+        </div>
+      </div>
+
+      <div>
+        <h4>Navegação</h4>
+        <ul class="rodape__lista">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="sobre.html">Sobre Nós</a></li>
+          <li><a href="capital.html">Acesso a Capital</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Acesso a Capital</h4>
+        <ul class="rodape__lista">
+          <li><a href="produtos-financeiros.html">Produtos financeiros</a></li>
+          <li><a href="home-cash.html">Home Cash</a></li>
+          <li><a href="capital.html#estruturadas">Soluções estruturadas</a></li>
+          <li><a href="capital.html#movimentos">Alavancagem e desalavancagem</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Contato</h4>
+        <ul class="rodape__lista">
+          <li><a href="mailto:contato@codigoxr.com.br">contato@codigoxr.com.br</a></li>
+          <li><a href="contato.html">Agendar conversa executiva</a></li>
+          <li><a href="capital.html#caminhos">Simular uma operação</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Nota obrigatória nas páginas de produtos financeiros -->
+    <p class="rodape__legal">A Código XR Capital atua na originação, consultoria, assessoria e estruturação de operações financeiras e imobiliárias, conectando clientes a instituições financeiras, fundos, gestoras e parceiros especializados. A aprovação, as taxas, os prazos e as condições das operações dependem da análise e das políticas de cada instituição ou parceiro responsável.</p>
+
+    <div class="rodape__base">
+      <span>&copy; <span data-ano>2026</span> Código XR Capital. Todos os direitos reservados.</span>
+      <span>Confidencialidade, ética e responsabilidade em cada projeto</span>
+      <span class="rodape__creditos">Produzido por <a href="https://formabranding.com.br/" target="_blank" rel="noopener">Forma Branding</a></span>
+    </div>
+  </div>
+</footer>
+
+<button class="ao-topo" type="button" aria-label="Voltar ao topo">
+  <svg viewBox="0 0 16 16" fill="none"><path d="M8 13V3m0 0L4 7m4-4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
