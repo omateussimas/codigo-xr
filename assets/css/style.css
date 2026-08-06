@@ -1822,6 +1822,101 @@ a.bolha:hover, a.bolha:focus-visible { background: var(--laranja); color: #fff; 
 }
 .jornada__midia img { width: 100%; height: 100%; object-fit: cover; transition: transform 1s var(--ease-out); }
 .jornada:hover .jornada__midia img { transform: scale(1.05); }
+/* --------------------------------------------------------------------------
+   CARROSSEL DE FOTOS
+   Troca sozinho a cada 3s. As setas continuam disponíveis a qualquer momento
+   e pausam o avanço automático, para não brigar com quem está navegando.
+   -------------------------------------------------------------------------- */
+.carrossel {
+  position: relative;
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  background: var(--marinho);
+  isolation: isolate;
+}
+.carrossel__quadro { position: absolute; inset: 0; }
+.carrossel__quadro img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%; object-fit: cover;
+  opacity: 0;
+  transform: scale(1.04);
+  transition: opacity .85s var(--ease), transform 4s var(--ease-out);
+}
+.carrossel__quadro img.is-ativa { opacity: 1; transform: scale(1); }
+
+.carrossel__seta {
+  position: absolute; top: 50%; z-index: 3;
+  display: grid; place-items: center;
+  width: 44px; height: 44px;
+  transform: translateY(-50%);
+  border: 0; border-radius: 50%;
+  background: rgba(240, 246, 249, .9);
+  color: var(--marinho);
+  cursor: pointer;
+  box-shadow: var(--sombra-sm);
+  transition: background .3s var(--ease), color .3s var(--ease), transform .3s var(--ease-out);
+}
+.carrossel__seta:hover { background: var(--laranja); color: #fff; }
+.carrossel__seta--antes { left: clamp(12px, 1.6vw, 20px); }
+.carrossel__seta--depois { right: clamp(12px, 1.6vw, 20px); }
+.carrossel__seta--antes:hover { transform: translateY(-50%) translateX(-3px); }
+.carrossel__seta--depois:hover { transform: translateY(-50%) translateX(3px); }
+.carrossel__seta svg { width: 16px; height: 16px; }
+
+.carrossel__pontos {
+  position: absolute; left: 0; right: 0; bottom: 0; z-index: 3;
+  display: flex; justify-content: center; gap: 8px;
+  padding: clamp(28px, 4vw, 44px) 0 clamp(14px, 1.8vw, 20px);
+  /* sem esta base os pontos desaparecem sobre fotos claras */
+  background: linear-gradient(to top, rgba(14, 18, 26, .55), transparent);
+}
+.carrossel__ponto {
+  width: 7px; height: 7px; padding: 0;
+  border: 0; border-radius: 50%;
+  background: rgba(240, 246, 249, .6);
+  cursor: pointer;
+  transition: background .3s var(--ease), width .35s var(--ease-out);
+}
+.carrossel__ponto.is-ativo { width: 22px; border-radius: 4px; background: var(--laranja); }
+
+/* Variante que acompanha a altura da coluna de texto ao lado. */
+.carrossel--coluna {
+  align-self: stretch;
+  height: 100%;
+  min-height: clamp(320px, 26vw, 480px);
+}
+@media (max-width: 1024px) {
+  .carrossel--coluna { height: auto; aspect-ratio: 4 / 3; min-height: 0; }
+}
+
+/* Hero de página com fotografia de fundo */
+.hero-pagina--foto { position: relative; isolation: isolate; }
+.hero-pagina__foto {
+  position: absolute; inset: 0; z-index: -2;
+  width: 100%; height: 100%; object-fit: cover; object-position: 18% 50%;
+}
+.hero-pagina--foto::after {
+  content: ''; position: absolute; inset: 0; z-index: -1;
+  background:
+    linear-gradient(92deg, rgba(14, 18, 26, .97) 0%, rgba(14, 18, 26, .93) 44%, rgba(14, 18, 26, .6) 72%, rgba(14, 18, 26, .28) 100%),
+    linear-gradient(180deg, rgba(14, 18, 26, .88) 0%, rgba(14, 18, 26, .5) 40%, rgba(14, 18, 26, .3) 72%, rgba(14, 18, 26, .62) 100%);
+}
+@media (max-width: 1024px) {
+  /* na tela estreita o texto cobre tudo; a foto entra como textura, sem apagar */
+  .hero-pagina__foto { object-position: 72% 38%; }
+  .hero-pagina--foto::after {
+    background: linear-gradient(180deg, rgba(14, 18, 26, .9) 0%, rgba(14, 18, 26, .74) 46%, rgba(14, 18, 26, .88) 100%);
+  }
+}
+
+/* Endereço do escritório */
+.endereco {
+  display: flex; gap: 14px; align-items: flex-start;
+  font-size: .95rem; line-height: 1.6;
+}
+.endereco svg { width: 16px; height: 16px; flex: none; margin-top: 3px; color: var(--laranja); }
+.rodape__endereco { margin-top: 18px; color: var(--claro-60); font-size: .9rem; line-height: 1.62; }
+
 /* Marca a jornada dentro da one page, para o visitante saber em qual caminho está. */
 .jornada__marca {
   display: block; margin-bottom: 14px;

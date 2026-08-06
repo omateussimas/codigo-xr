@@ -101,7 +101,7 @@ Logotipo em `assets/brand/` (versões azul, marinho, branca e ícone), extraído
 
 ## Fotografia
 
-A Home usa exclusivamente as seis fotos enviadas pelo cliente, sem repetição:
+A Home usa as seis fotos do primeiro envio do cliente, sem repetição:
 
 | Foto | Onde aparece |
 |---|---|
@@ -112,11 +112,27 @@ A Home usa exclusivamente as seis fotos enviadas pelo cliente, sem repetição:
 | `perfil-familiar.jpg` | Empresas familiares |
 | `perfil-transformacao.jpg` | Empresas em transformação |
 
-Como o acervo tem seis imagens, as seções de "Como atuamos", o bloco "Nosso jeito de atuar"
-e os cards de conteúdo passaram a ser tipográficos, sem fotografia. Com mais fotos aprovadas
-dá para devolver imagem a esses blocos.
+Sobre Nós, Acesso a Capital e Contato usam a pasta **Fotos Site Codigo XR**, com
+fotografia real dos sócios em campo, eventos, indústria e escritório. Os arquivos
+foram recortados por slot e otimizados (JPEG progressivo, qualidade 82):
 
-Sobre Nós, Blog e Contato ainda usam banco de imagens complementar nas seções de setores e artigos.
+| Arquivo | Onde aparece |
+|---|---|
+| `xr-hero-capital.jpg` | hero de Acesso a Capital (Hero_02, o casal no campo) |
+| `xr-juntos-1` a `xr-juntos-6` | carrossel de Sobre Nós |
+| `xr-palestra.jpg` | banner de abertura de Sobre Nós |
+| `xr-estrutura.jpg` | dobra "Trajetória construída em empresas" |
+| `xr-reuniao.jpg` | jornada de produtos financeiros |
+| `xr-patrimonio.jpg` | jornada Home Cash |
+| `xr-retrato-contato.jpg` | coluna lateral de Contato |
+| `setor-*.jpg` (6) | setores de atuação em Sobre Nós |
+
+O **carrossel** troca de foto a cada 3 segundos e para o automático assim que o
+visitante usa uma das setas ou os pontos, para não trocar a imagem na mão de quem
+está navegando. Fora da tela ele fica parado. Respeita `prefers-reduced-motion`.
+
+Onze fotos do envio ficaram de reserva (aviação, colheita ao pôr do sol, palestras
+e retratos), disponíveis para novas dobras.
 
 ## Pontos que dependem do cliente
 
@@ -127,8 +143,9 @@ Sobre Nós, Blog e Contato ainda usam banco de imagens complementar nas seções
    já validados pelo cliente e publicados.
 3. **Foto institucional dos dois fundadores juntos** na dobra de abertura de Sobre Nós
    (`assets/img/fundadores.jpg` é temporária).
-4. **Telefone e endereço**: ainda não informados. O e-mail já é o definitivo,
-   `rodrigopedreira@codigoxrcapital.com.br`. O Instagram já aponta para
+4. **Telefone**: ainda não informado. E-mail e endereço já são os definitivos
+   (`rodrigopedreira@codigoxrcapital.com.br` e o escritório em Alphaville, Barueri/SP,
+   presente na página de Contato e no rodapé de todas as páginas). O Instagram já aponta para
    `instagram.com/rodpedreira`. O LinkedIn foi retirado do site.
 5. **Artigos do blog**: títulos e resumos são exemplos; os links apontam para `#`.
 6. **Formulário**: valida e confirma no front-end. Falta conectar ao destino final

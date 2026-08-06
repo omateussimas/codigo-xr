@@ -376,7 +376,70 @@
   }
 
   /* ------------------------------------------------------------------
-     11. PRODUTO VINDO DA LOJA
+     11. CARROSSEL DE FOTOS
+     Avança sozinho a cada 3s. As setas e os pontos param o automático,
+     porque quem clicou está no comando e não quer a foto trocando na mão.
+     ------------------------------------------------------------------ */
+  function iniciarCarrossel() {
+    $$('[data-carrossel]').forEach(function (raizC) {
+      var fotos = $$('.carrossel__quadro img', raizC);
+      if (fotos.length < 2) return;
+
+      var pontos = $$('.carrossel__ponto', raizC);
+      var atual = 0;
+      var timer = null;
+      var automatico = !poucoMovimento;
+
+      function mostrar(i) {
+        atual = (i + fotos.length) % fotos.length;
+        fotos.forEach(function (f, n) {
+          f.classList.toggle('is-ativa', n === atual);
+          f.setAttribute('aria-hidden', n === atual ? 'false' : 'true');
+        });
+        pontos.forEach(function (p, n) {
+          p.classList.toggle('is-ativo', n === atual);
+          p.setAttribute('aria-current', n === atual ? 'true' : 'false');
+        });
+      }
+
+      function agendar() {
+        clearTimeout(timer);
+        if (!automatico) return;
+        timer = setTimeout(function () { mostrar(atual + 1); agendar(); }, 3000);
+      }
+
+      function assumirControle(i) {
+        automatico = false;
+        clearTimeout(timer);
+        mostrar(i);
+      }
+
+      var antes = $('.carrossel__seta--antes', raizC);
+      var depois = $('.carrossel__seta--depois', raizC);
+      if (antes) antes.addEventListener('click', function () { assumirControle(atual - 1); });
+      if (depois) depois.addEventListener('click', function () { assumirControle(atual + 1); });
+      pontos.forEach(function (p, n) {
+        p.addEventListener('click', function () { assumirControle(n); });
+      });
+
+      // fora da tela não faz sentido consumir ciclos trocando foto
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver(function (entradas) {
+          entradas.forEach(function (e) {
+            if (e.isIntersecting) agendar();
+            else clearTimeout(timer);
+          });
+        }, { threshold: 0.15 }).observe(raizC);
+      } else {
+        agendar();
+      }
+
+      mostrar(0);
+    });
+  }
+
+  /* ------------------------------------------------------------------
+     12. PRODUTO VINDO DA LOJA
      Quando o visitante chega de produtos-financeiros.html?produto=X,
      o formulário de contato já abre sabendo o que ele veio pedir.
      ------------------------------------------------------------------ */
@@ -405,14 +468,14 @@
   }
 
   /* ------------------------------------------------------------------
-     12. ANO ATUAL NO RODAPÉ
+     13. ANO ATUAL NO RODAPÉ
      ------------------------------------------------------------------ */
   function iniciarAno() {
     $$('[data-ano]').forEach(function (el) { el.textContent = new Date().getFullYear(); });
   }
 
   /* ------------------------------------------------------------------
-     13. BOOT
+     14. BOOT
      ------------------------------------------------------------------ */
   function iniciar() {
     raiz.classList.add('js');
@@ -426,6 +489,7 @@
     iniciarParallax();
     iniciarFiltros();
     iniciarFormulario();
+    iniciarCarrossel();
     iniciarProdutoNaUrl();
     iniciarAno();
   }
