@@ -140,8 +140,8 @@ e retratos), disponíveis para novas dobras.
 
 ## Pontos que dependem do cliente
 
-1. **Números institucionais** (`+25 anos`, `+70 projetos`, `6 setores`, `100%`). O dado de
-   empresas acompanhadas foi retirado do site a pedido do cliente.
+1. **Números institucionais** (`+25 anos`, `6 setores`, `100%`). Os dados de empresas
+   acompanhadas e de projetos conduzidos foram retirados do site a pedido do cliente.
    Estão marcados no HTML com `<!-- AJUSTAR COM O CLIENTE -->` na Home e em Sobre Nós.
 2. ~~Biografias dos fundadores~~: texto e formação de Rodrigo Pedreira e Tercilia Pinheiro
    já validados pelo cliente e publicados.
