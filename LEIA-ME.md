@@ -116,16 +116,20 @@ Sobre Nós, Acesso a Capital e Contato usam a pasta **Fotos Site Codigo XR**, co
 fotografia real dos sócios em campo, eventos, indústria e escritório. Os arquivos
 foram recortados por slot e otimizados (JPEG progressivo, qualidade 82):
 
-| Arquivo | Onde aparece |
-|---|---|
-| `xr-hero-capital.jpg` | hero de Acesso a Capital (Hero_02, o casal no campo) |
-| `xr-juntos-1` a `xr-juntos-6` | carrossel de Sobre Nós |
-| `xr-palestra.jpg` | banner de abertura de Sobre Nós |
-| `xr-estrutura.jpg` | dobra "Trajetória construída em empresas" |
-| `xr-reuniao.jpg` | jornada de produtos financeiros |
-| `xr-patrimonio.jpg` | jornada Home Cash |
-| `xr-retrato-contato.jpg` | coluna lateral de Contato |
-| `setor-*.jpg` (6) | setores de atuação em Sobre Nós |
+| Arquivo | Origem | Onde aparece |
+|---|---|---|
+| `xr-hero-capital.jpg` | `Imagem_02` | hero de Acesso a Capital |
+| `xr-produtos.jpg` | `Imagem_03` | jornada de produtos financeiros |
+| `xr-home-cash.jpg` | `Imagem_04` | jornada Home Cash |
+| `xr-banner-sobre.jpg` | `Imagem_05` | banner de abertura de Sobre Nós |
+| `xr-retrato-contato.jpg` | `Contato` | coluna lateral de Contato |
+| `setor-agronegocio.jpg` | `Imagem_02` | setor Agronegócio em Sobre Nós |
+| `xr-juntos-1` a `xr-juntos-6` | diversas | carrossel de Sobre Nós |
+| `xr-estrutura.jpg` | diversas | dobra "Trajetória construída em empresas" |
+| `setor-*.jpg` (outros 5) | diversas | setores de atuação em Sobre Nós |
+
+`Imagem_02` foi pedida em dois lugares pelo cliente, então a aeronave aparece
+tanto no hero de Acesso a Capital quanto no card de Agronegócio.
 
 O **carrossel** troca de foto a cada 3 segundos e para o automático assim que o
 visitante usa uma das setas ou os pontos, para não trocar a imagem na mão de quem

@@ -1893,7 +1893,7 @@ a.bolha:hover, a.bolha:focus-visible { background: var(--laranja); color: #fff; 
 .hero-pagina--foto { position: relative; isolation: isolate; }
 .hero-pagina__foto {
   position: absolute; inset: 0; z-index: -2;
-  width: 100%; height: 100%; object-fit: cover; object-position: 18% 50%;
+  width: 100%; height: 100%; object-fit: cover; object-position: 50% 52%;
 }
 .hero-pagina--foto::after {
   content: ''; position: absolute; inset: 0; z-index: -1;
@@ -1903,7 +1903,7 @@ a.bolha:hover, a.bolha:focus-visible { background: var(--laranja); color: #fff; 
 }
 @media (max-width: 1024px) {
   /* na tela estreita o texto cobre tudo; a foto entra como textura, sem apagar */
-  .hero-pagina__foto { object-position: 72% 38%; }
+  .hero-pagina__foto { object-position: 50% 46%; }
   .hero-pagina--foto::after {
     background: linear-gradient(180deg, rgba(14, 18, 26, .9) 0%, rgba(14, 18, 26, .74) 46%, rgba(14, 18, 26, .88) 100%);
   }
