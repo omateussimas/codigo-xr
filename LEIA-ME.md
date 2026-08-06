@@ -20,6 +20,16 @@ Depois, na Hostinger: **hPanel → Avançado → GIT → Implantar** no reposit�
 URL de Webhook que a Hostinger mostra e cadastre em GitHub → Settings →
 Webhooks do repositório.
 
+### Endereços sem .html
+
+O `.htaccess` serve `/sobre` a partir de `sobre.html`, e quem chegar por um
+endereço com `.html` é redirecionado em 301 para a versão limpa. A home fica na
+raiz; `/home`, `/index` e `/index.html` levam para lá.
+
+Por isso **todo caminho de asset no HTML é absoluto** (`/assets/...`). Com
+caminho relativo, qualquer endereço com um nível a mais ou barra no fim quebraria
+o CSS e as imagens.
+
 ### Cache: sempre carimbar antes de publicar
 
 O `.htaccess` manda CSS, JS, fontes e imagens com cache de um ano e `immutable`,
@@ -49,13 +59,13 @@ O `vercel.json` só vale para a Vercel e é ignorado pela Hostinger.
 
 ## Páginas
 
-| Arquivo | Página |
-|---|---|
-| `index.html` | Home (9 dobras) |
-| `sobre.html` | Sobre Nós / Quem Somos |
-| `capital.html` | Acesso a Capital (one page com toda a área) |
-| `blog.html` | Blog |
-| `contato.html` | Contato e formulário executivo |
+| Arquivo | Endereço | Página |
+|---|---|---|
+| `index.html` | `/` | Home (9 dobras) |
+| `sobre.html` | `/sobre` | Sobre Nós / Quem Somos |
+| `capital.html` | `/capital` | Acesso a Capital (one page com toda a área) |
+| `blog.html` | `/blog` | Blog (fora do ar, sem link e redirecionando para a home) |
+| `contato.html` | `/contato` | Contato e formulário executivo |
 
 ## Área de Acesso a Capital
 
