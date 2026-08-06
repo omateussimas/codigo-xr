@@ -1,0 +1,104 @@
+# ==========================================================================
+# Código XR Capital
+# Configuração para hospedagem Apache (Hostinger)
+# ==========================================================================
+
+# Página inicial
+DirectoryIndex index.html
+
+# Codificação padrão dos arquivos de texto
+AddDefaultCharset UTF-8
+
+# --------------------------------------------------------------------------
+# HTTPS e domínio canônico
+# Uma única URL oficial: https://codigoxrcapital.com.br
+# --------------------------------------------------------------------------
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # força HTTPS
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+  # tira o www
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+</IfModule>
+
+# --------------------------------------------------------------------------
+# Redirecionamentos das páginas que foram absorvidas pela one page
+# --------------------------------------------------------------------------
+Redirect 301 /produtos-financeiros.html /capital.html#produtos
+Redirect 301 /produtos-financeiros      /capital.html#produtos
+Redirect 301 /home-cash.html            /capital.html#home-cash
+Redirect 301 /home-cash                 /capital.html#home-cash
+
+# --------------------------------------------------------------------------
+# Compressão
+# --------------------------------------------------------------------------
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css
+  AddOutputFilterByType DEFLATE application/javascript application/x-javascript
+  AddOutputFilterByType DEFLATE image/svg+xml application/json
+</IfModule>
+
+# --------------------------------------------------------------------------
+# Cache
+# HTML sempre revalidado, para publicar alteração e ver na hora.
+# Fontes, imagens, CSS e JS ficam em cache longo.
+# --------------------------------------------------------------------------
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/html                  "access plus 0 seconds"
+  ExpiresByType text/css                   "access plus 6 months"
+  ExpiresByType application/javascript     "access plus 6 months"
+  ExpiresByType font/woff2                 "access plus 1 year"
+  ExpiresByType image/jpeg                 "access plus 1 year"
+  ExpiresByType image/png                  "access plus 1 year"
+  ExpiresByType image/webp                 "access plus 1 year"
+  ExpiresByType image/svg+xml              "access plus 1 year"
+  ExpiresByType image/x-icon               "access plus 1 year"
+</IfModule>
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.(html)$">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+  <FilesMatch "\.(css|js|woff2|jpg|jpeg|png|webp|svg|ico)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # cabeçalhos básicos de segurança
+  Header set X-Content-Type-Options "nosniff"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set X-Frame-Options "SAMEORIGIN"
+</IfModule>
+
+# Tipos MIME que nem todo servidor traz configurado
+<IfModule mod_mime.c>
+  AddType font/woff2 .woff2
+  AddType image/webp .webp
+  AddType image/svg+xml .svg
+</IfModule>
+
+# --------------------------------------------------------------------------
+# Arquivos do repositório que não devem ficar acessíveis pela web.
+# O deploy é feito por Git, então .git, notas internas e a configuração da
+# Vercel acabam indo junto para a pasta do site.
+# --------------------------------------------------------------------------
+RedirectMatch 404 ^/\.git
+# o IfModule evita erro 500 caso o servidor não tenha o módulo de autorização
+<IfModule mod_authz_core.c>
+  <FilesMatch "^\.|\.(md|json|yml|yaml)$">
+    Require all denied
+  </FilesMatch>
+</IfModule>
+
+# --------------------------------------------------------------------------
+# Página de erro
+# --------------------------------------------------------------------------
+ErrorDocument 404 /index.html
+
+# Impede a listagem de diretórios
+Options -Indexes

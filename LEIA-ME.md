@@ -3,15 +3,31 @@
 Site estático (HTML, CSS e JavaScript puros). Basta subir a pasta inteira em qualquer
 hospedagem ou na Vercel. Não há build.
 
-**No ar:** https://codigo-xr.vercel.app
+**No ar:** https://codigoxrcapital.com.br (Hostinger) e https://codigo-xr.vercel.app (prévia)
 **Repositório:** https://github.com/omateussimas/codigo-xr (branch `main`)
 
-Para publicar uma nova versão, dentro desta pasta:
+### Como publicar uma nova versão
+
+O repositório é a raiz do site: o que está em `main` é o que fica no ar.
 
 ```
 git add -A && git commit -m "mensagem" && git push
-vercel --prod
+vercel --prod          # atualiza a prévia na Vercel
 ```
+
+Depois, na Hostinger: **hPanel → Avançado → GIT → Implantar** no repositório
+`codigo-xr`. O deploy é manual por padrão; se quiser automático, copie a
+URL de Webhook que a Hostinger mostra e cadastre em GitHub → Settings →
+Webhooks do repositório.
+
+### Configuração de servidor
+
+O arquivo `.htaccess` cuida do Apache/LiteSpeed da Hostinger: força HTTPS,
+tira o `www`, redireciona as duas URLs antigas para as âncoras da one page,
+liga compressão e cache, e bloqueia o acesso web a `.git`, `LEIA-ME.md` e
+`vercel.json`, que vão junto no deploy por Git.
+
+O `vercel.json` só vale para a Vercel e é ignorado pela Hostinger.
 
 ## Páginas
 
