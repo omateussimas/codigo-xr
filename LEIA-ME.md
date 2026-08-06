@@ -20,6 +20,24 @@ Depois, na Hostinger: **hPanel → Avançado → GIT → Implantar** no reposit�
 URL de Webhook que a Hostinger mostra e cadastre em GitHub → Settings →
 Webhooks do repositório.
 
+### Cache: sempre carimbar antes de publicar
+
+O `.htaccess` manda CSS, JS, fontes e imagens com cache de um ano e `immutable`,
+o que é ótimo para velocidade e péssimo para atualização: a URL não muda, então
+o CDN da Hostinger continua servindo a versão antiga mesmo depois do deploy.
+
+Por isso as referências levam um hash do conteúdo, como
+`style.css?v=6f1a8a77`. **Sempre que alterar `style.css` ou `main.js`, rode
+o carimbador antes do commit**, senão a mudança não chega em quem já visitou:
+
+```
+python versionar.py
+```
+
+Se trocar uma imagem mantendo o mesmo nome de arquivo, o problema é o mesmo.
+Nesse caso, use um nome novo ou limpe o cache em hPanel → Painel de controle →
+Cache → Limpar cache.
+
 ### Configuração de servidor
 
 O arquivo `.htaccess` cuida do Apache/LiteSpeed da Hostinger: força HTTPS,
