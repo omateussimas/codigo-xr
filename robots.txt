@@ -2,6 +2,7 @@ User-agent: *
 Allow: /
 
 # Blog fora do ar enquanto não houver artigo publicado
+Disallow: /blog
 Disallow: /blog.html
 
 # Arquivos internos que acompanham o deploy por Git

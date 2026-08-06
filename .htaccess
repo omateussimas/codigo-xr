@@ -9,36 +9,53 @@ DirectoryIndex index.html
 # Codificação padrão dos arquivos de texto
 AddDefaultCharset UTF-8
 
-# --------------------------------------------------------------------------
-# HTTPS e domínio canônico
-# Uma única URL oficial: https://codigoxrcapital.com.br
-# --------------------------------------------------------------------------
+# ==========================================================================
+# ENDEREÇOS
+# Tudo em mod_rewrite, na ordem certa. Misturar com o Redirect do mod_alias
+# dá conflito, porque os dois módulos rodam em fases diferentes da requisição.
+# ==========================================================================
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
-  # força HTTPS
+  # ---- 1. HTTPS ----------------------------------------------------------
   RewriteCond %{HTTPS} !=on
   RewriteCond %{HTTP:X-Forwarded-Proto} !https
   RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
 
-  # tira o www
+  # ---- 2. sem www --------------------------------------------------------
   RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
   RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+  # ---- 3. a home mora na raiz -------------------------------------------
+  # /index.html, /index e /home levam para https://codigoxrcapital.com.br
+  RewriteCond %{THE_REQUEST} \s/+index(\.html)?[\s?] [NC]
+  RewriteRule ^ / [R=301,L]
+  RewriteRule ^home/?$ / [R=301,L]
+
+  # ---- 4. páginas absorvidas pela one page de capital --------------------
+  RewriteRule ^produtos-financeiros(\.html)?/?$ /capital#produtos [R=301,L,NE]
+  RewriteRule ^home-cash(\.html)?/?$            /capital#home-cash [R=301,L,NE]
+
+  # ---- 5. blog fora do ar ------------------------------------------------
+  # A página continua no repositório, só não fica acessível enquanto não
+  # houver artigo publicado. Para reativar, comente a linha abaixo.
+  RewriteRule ^blog(\.html)?/?$ / [R=302,L]
+
+  # ---- 6. endereço sem .html --------------------------------------------
+  # quem chegar com .html é levado para a versão limpa
+  RewriteCond %{THE_REQUEST} \s/+([^\s?]+)\.html[\s?] [NC]
+  RewriteRule ^ /%1 [R=301,L]
+
+  # barra no fim atrapalha o caminho relativo dos assets
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^(.+)/$ /$1 [R=301,L]
+
+  # ---- 7. serve /sobre a partir de sobre.html ---------------------------
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+  RewriteRule ^(.+)$ /$1.html [L]
 </IfModule>
-
-# --------------------------------------------------------------------------
-# Redirecionamentos das páginas que foram absorvidas pela one page
-# --------------------------------------------------------------------------
-RedirectMatch 301 ^/produtos-financeiros(\.html)?/?$ /capital.html#produtos
-RedirectMatch 301 ^/home-cash(\.html)?/?$             /capital.html#home-cash
-
-# --------------------------------------------------------------------------
-# BLOG FORA DO AR
-# A página existe no repositório, mas fica invisível enquanto não houver
-# artigo publicado. Quem chegar pela URL antiga vai para a home.
-# Para reativar, é só comentar as duas linhas abaixo com # na frente.
-# --------------------------------------------------------------------------
-RedirectMatch 302 ^/blog(\.html)?/?$ /
 
 # --------------------------------------------------------------------------
 # Compressão

@@ -82,7 +82,7 @@ function responder(int $codigo, bool $ok, string $mensagem): void
         header('Content-Type: application/json; charset=utf-8');
         echo json_encode(['ok' => $ok, 'mensagem' => $mensagem], JSON_UNESCAPED_UNICODE);
     } else {
-        $destino = $ok ? '/contato.html?enviado=1' : '/contato.html?erro=1';
+        $destino = $ok ? '/contato?enviado=1' : '/contato?erro=1';
         header('Location: ' . $destino, true, 303);
     }
     exit;
