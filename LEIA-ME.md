@@ -1,4 +1,4 @@
-# Código XR Capital — Site institucional
+# Código XR Capital, site institucional
 
 Site estático (HTML, CSS e JavaScript puros). Basta subir a pasta inteira em qualquer
 hospedagem ou na Vercel. Não há build.
