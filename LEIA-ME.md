@@ -189,16 +189,17 @@ e retratos), disponíveis para novas dobras.
    Estão marcados no HTML com `<!-- AJUSTAR COM O CLIENTE -->` na Home e em Sobre Nós.
 2. ~~Biografias dos fundadores~~: texto e formação de Rodrigo Pedreira e Tercilia Pinheiro
    já validados pelo cliente e publicados.
-3. **Foto institucional dos dois fundadores juntos** na dobra de abertura de Sobre Nós
-   (`assets/img/fundadores.jpg` é temporária).
+3. ~~Foto institucional dos fundadores~~: a dobra de abertura de Sobre Nós já usa
+   fotografia real do cliente (`xr-banner-sobre.jpg`).
 4. **Telefone**: ainda não informado. E-mail e endereço já são os definitivos
    (`rodrigopedreira@codigoxrcapital.com.br` e o escritório em Alphaville, Barueri/SP,
    presente na página de Contato e no rodapé de todas as páginas). O Instagram já aponta para
    `instagram.com/rodpedreira`. O LinkedIn foi retirado do site.
-5. **Artigos do blog**: títulos e resumos são exemplos; os links apontam para `#`.
-6. **Formulário**: valida e confirma no front-end. Falta conectar ao destino final
-   (e-mail, CRM ou serviço como Formspree). O ponto de integração fica em
-   `assets/js/main.js`, função `iniciarFormulario`.
+5. **Artigos do blog**: títulos e resumos são exemplos, os links apontam para `#`, e a
+   página está fora do ar até existir conteúdo real.
+6. ~~Destino do formulário~~: os dois formulários enviam por `enviar.php` para
+   `rodrigopedreira@` e `tercilia.pinheiro@`, com anexos. Falta confirmar que a caixa
+   `tercilia.pinheiro@codigoxrcapital.com.br` existe em hPanel → E-mails.
 
 ## Observações de escrita
 
@@ -212,7 +213,11 @@ O rodapé traz o crédito "Produzido por Forma Branding", com link para formabra
 
 ```
 codigo-xr/
-├── index.html  sobre.html  blog.html  contato.html
+├── index.html  sobre.html  capital.html  blog.html  contato.html
+├── enviar.php          recebe os formulários e envia por e-mail
+├── .htaccess           endereços, HTTPS, cache e bloqueios
+├── versionar.py        carimba CSS e JS antes de publicar
+├── robots.txt  sitemap.xml
 ├── favicon.ico
 └── assets/
     ├── css/style.css
