@@ -1454,6 +1454,20 @@ a.bolha:hover, a.bolha:focus-visible { background: var(--laranja); color: #fff; 
   color: var(--marinho);
 }
 .form-status.is-visivel { display: block; animation: sobe .5s var(--ease-out); }
+/* falha de envio: o visitante precisa perceber que não foi */
+.form-status--erro {
+  background: rgba(242, 78, 36, .07);
+  border-color: rgba(242, 78, 36, .34);
+}
+
+/* Armadilha para robô: fora da tela, sem display:none, que alguns
+   preenchedores automáticos ignoram. */
+.armadilha {
+  position: absolute !important;
+  left: -9999px;
+  width: 1px; height: 1px;
+  overflow: hidden;
+}
 @keyframes sobe { from { opacity: 0; transform: translateY(10px); } }
 
 /* Layout da página de contato */

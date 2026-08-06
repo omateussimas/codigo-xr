@@ -316,8 +316,11 @@
      10. FORMULÁRIO
      ------------------------------------------------------------------ */
   var RETORNO_PADRAO = 'Recebemos suas informações. Nossa equipe fará uma análise inicial e retornará o contato para agendar a conversa executiva.';
+  var ERRO_PADRAO = 'Não conseguimos enviar agora. Escreva para rodrigopedreira@codigoxrcapital.com.br que respondemos rápido.';
 
   function iniciarFormulario() {
+    // carimbo de tempo: separa quem preencheu de quem disparou na hora
+    $$('[data-carimbo]').forEach(function (c) { c.value = Date.now(); });
     $$('[data-form]').forEach(prepararFormulario);
   }
 
@@ -363,15 +366,62 @@
         return;
       }
 
-      var botao = $('button[type="submit"]', form);
-      if (botao) botao.setAttribute('disabled', 'disabled');
-      if (status) {
-        status.textContent = form.getAttribute('data-retorno') || RETORNO_PADRAO;
-        status.classList.add('is-visivel');
-        status.scrollIntoView({ behavior: poucoMovimento ? 'auto' : 'smooth', block: 'center' });
-      }
+      enviar(form, status);
+    });
+  }
+
+  /* Envia para o enviar.php. Sem action definido, ou se a rede falhar,
+     o visitante recebe o e-mail da equipe em vez de um erro seco. */
+  function enviar(form, status) {
+    var botao = $('button[type="submit"]', form);
+    var rotulo = botao ? botao.innerHTML : '';
+    var destino = form.getAttribute('action');
+
+    function avisar(texto, erro) {
+      if (!status) return;
+      status.textContent = texto;
+      status.classList.add('is-visivel');
+      status.classList.toggle('form-status--erro', !!erro);
+      status.scrollIntoView({ behavior: poucoMovimento ? 'auto' : 'smooth', block: 'center' });
+    }
+
+    function liberar() {
+      if (!botao) return;
+      botao.removeAttribute('disabled');
+      botao.innerHTML = rotulo;
+    }
+
+    if (botao) {
+      botao.setAttribute('disabled', 'disabled');
+      botao.textContent = 'Enviando...';
+    }
+
+    if (!destino || !window.fetch) {
+      avisar(form.getAttribute('data-retorno') || RETORNO_PADRAO);
       form.reset();
-      setTimeout(function () { if (botao) botao.removeAttribute('disabled'); }, 2500);
+      setTimeout(liberar, 2500);
+      return;
+    }
+
+    fetch(destino, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'X-Requested-With': 'fetch' }
+    }).then(function (r) {
+      return r.json().then(function (j) { return { ok: r.ok, corpo: j }; });
+    }).then(function (res) {
+      if (!res.ok || !res.corpo.ok) {
+        avisar(res.corpo.mensagem || ERRO_PADRAO, true);
+        liberar();
+        return;
+      }
+      avisar(form.getAttribute('data-retorno') || RETORNO_PADRAO);
+      form.reset();
+      $$('[data-carimbo]', form).forEach(function (c) { c.value = Date.now(); });
+      setTimeout(liberar, 2500);
+    })['catch'](function () {
+      avisar(ERRO_PADRAO, true);
+      liberar();
     });
   }
 

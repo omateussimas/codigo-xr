@@ -50,7 +50,6 @@
           <a class="submenu__link" href="https://app.teddy360.com.br/#/store/efd0c424-6882-4dab-96a6-a4d4dbcfbdfd/v2" target="_blank" rel="noopener">Simule sua operação</a>
           </div>
         </div>
-        <a class="nav__link" href="blog.html">Blog</a>
       </nav>
       <div class="topo__acoes">
         <a class="btn btn--sm" href="contato.html">
@@ -82,7 +81,6 @@
       <a href="capital.html#estruturadas">Soluções estruturadas</a>
       <a href="https://app.teddy360.com.br/#/store/efd0c424-6882-4dab-96a6-a4d4dbcfbdfd/v2" target="_blank" rel="noopener">Simule sua operação</a>
     </div>
-    <a class="drawer__link" style="--i:4" href="blog.html">Blog</a>
   </nav>
   <div class="drawer__rodape">
     <a class="btn btn--bloco" href="contato.html">
@@ -415,8 +413,14 @@
 
           <div class="form-status" role="status" aria-live="polite"></div>
 
-          <form class="form" data-form novalidate
+          <form class="form" action="enviar.php" method="post" enctype="multipart/form-data" data-form novalidate
                 data-retorno="Recebemos suas informações. Um especialista da Código XR analisará o enquadramento inicial da operação e entrará em contato para os próximos passos.">
+            <!-- controle: armadilha para robô e carimbo de tempo -->
+            <p class="armadilha" aria-hidden="true"><label>Deixe este campo vazio
+              <input type="text" name="website" tabindex="-1" autocomplete="off"></label></p>
+            <input type="hidden" name="formulario" value="Qualificação para Home Cash">
+            <input type="hidden" name="pagina" value="Acesso a Capital">
+            <input type="hidden" name="carimbo" data-carimbo value="">
 
             <div class="form__linha">
               <div class="campo">
@@ -564,7 +568,7 @@
 
             <div class="campo campo--arquivo">
               <label for="documentos">Anexar matrícula, IPTU e fotos do imóvel</label>
-              <input type="file" id="documentos" name="documentos" multiple accept=".pdf,.jpg,.jpeg,.png,.webp,.heic">
+              <input type="file" id="documentos" name="documentos[]" multiple accept=".pdf,.jpg,.jpeg,.png,.webp,.heic">
               <span class="campo__aviso"></span>
               <p class="form__nota" style="margin-top:10px">Opcional neste momento. Anexar a documentação agora acelera a análise preliminar de enquadramento.</p>
             </div>
@@ -801,7 +805,6 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="sobre.html">Sobre Nós</a></li>
           <li><a href="capital.html">Acesso a Capital</a></li>
-          <li><a href="blog.html">Blog</a></li>
           <li><a href="contato.html">Contato</a></li>
         </ul>
       </div>

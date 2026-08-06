@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Blog fora do ar enquanto não houver artigo publicado
+Disallow: /blog.html
+
+# Arquivos internos que acompanham o deploy por Git
+Disallow: /LEIA-ME.md
+Disallow: /vercel.json
+Disallow: /enviar.php
+
+Sitemap: https://codigoxrcapital.com.br/sitemap.xml
