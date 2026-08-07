@@ -182,6 +182,45 @@ está navegando. Fora da tela ele fica parado. Respeita `prefers-reduced-motion`
 Onze fotos do envio ficaram de reserva (aviação, colheita ao pôr do sol, palestras
 e retratos), disponíveis para novas dobras.
 
+## SEO
+
+**Metadados.** Cada página tem título próprio com a palavra-chave na frente
+(entre 50 e 58 caracteres, para não ser cortado no resultado) e descrição entre
+154 e 160 caracteres. Todas trazem `canonical`, `og:*` completo e
+`twitter:card` no formato de imagem grande.
+
+**Dados estruturados** em JSON-LD, um `@graph` por página:
+
+| Página | Tipos |
+|---|---|
+| `/` | ProfessionalService, WebSite, WebPage |
+| `/sobre` | ProfessionalService, AboutPage, BreadcrumbList |
+| `/capital` | ProfessionalService, WebPage, BreadcrumbList, Service com OfferCatalog das 10 linhas |
+| `/contato` | ProfessionalService, ContactPage, BreadcrumbList |
+
+O `ProfessionalService` carrega endereço completo, e-mail, Instagram, a equipe e
+as áreas de conhecimento, que é o que alimenta o painel de conhecimento e a busca
+local por Alphaville e Barueri.
+
+Não foi criado `FAQPage`: o acordeão da página de contato tem afirmações, não
+perguntas com resposta. Marcar assim seria forçar o schema e vale penalidade.
+
+**Miniatura de link:** `assets/img/og-codigo-xr.jpg`, 1200x630, gerada a partir
+de `Miniatura site.png`. Se trocar a imagem mantendo o nome, rode `seo.py` ou
+atualize o `?v=` na mão, senão o WhatsApp continua servindo a antiga.
+
+### O que depende do cliente para ranquear
+
+1. **Google Search Console**: cadastrar `codigoxrcapital.com.br`, validar pelo DNS
+   na Hostinger e enviar `sitemap.xml`. Sem isso o Google demora bem mais a indexar.
+2. **Perfil da Empresa no Google**: criar com o endereço de Alphaville. É o que
+   mais pesa em busca local e ainda não existe.
+3. **Conteúdo**: o blog está fora do ar por não ter artigo. Página que ranqueia
+   para termo de cauda longa é artigo, não página institucional. Publicar de forma
+   constante é o que sustenta o resultado no médio prazo.
+4. **Telefone e horário de atendimento**: entram no dado estruturado assim que
+   forem informados e reforçam a busca local.
+
 ## Pontos que dependem do cliente
 
 1. **Números institucionais** (`+25 anos`, `6 setores`, `100%`). Os dados de empresas
