@@ -10,4 +10,7 @@ Disallow: /LEIA-ME.md
 Disallow: /vercel.json
 Disallow: /enviar.php
 
+# Landing pages de campanha, acesso apenas por link direto
+Disallow: /lp/
+
 Sitemap: https://codigoxrcapital.com.br/sitemap.xml

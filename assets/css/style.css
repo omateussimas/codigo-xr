@@ -1964,6 +1964,8 @@ a.bolha:hover, a.bolha:focus-visible { background: var(--laranja); color: #fff; 
 .jornada--escura h2, .jornada--escura h3 { color: var(--azul); }
 .jornada--escura .jornada__lista li { color: var(--claro-60); }
 .jornada--escura .texto, .jornada--escura .lead { color: var(--claro-60); }
+.jornada--escura .link-seta { color: var(--azul); opacity: .7; }
+.jornada--escura .link-seta:hover { color: var(--laranja); opacity: 1; }
 
 /* Cartões de produto financeiro */
 .produtos {
