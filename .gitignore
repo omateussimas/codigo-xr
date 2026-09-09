@@ -10,3 +10,4 @@ node_modules/
 # Pacote de publicação manual (o deploy oficial é por Git)
 dist/
 codigo-xr-hostinger.zip
+.env*
