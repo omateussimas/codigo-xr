@@ -846,6 +846,25 @@ h3 { font-size: clamp(1.25rem, 1.6vw, 1.55rem); }
 }
 .card-bonus__valor span:first-child { font-size: .74rem; color: var(--claro-60); text-transform: uppercase; letter-spacing: .06em; }
 .card-bonus__valor strong { font-family: var(--f-titulo); color: var(--azul); font-size: 1.15rem; }
+.card-bonus__valor strong.valor-oculto {
+  position: relative;
+  color: var(--claro-60);
+  opacity: .55;
+  user-select: none;
+}
+.card-bonus__valor strong.valor-oculto::before,
+.card-bonus__valor strong.valor-oculto::after {
+  content: '';
+  position: absolute;
+  left: -6%;
+  right: -6%;
+  top: 50%;
+  height: 2px;
+  background: var(--laranja);
+  border-radius: 2px;
+}
+.card-bonus__valor strong.valor-oculto::before { transform: rotate(14deg); }
+.card-bonus__valor strong.valor-oculto::after { transform: rotate(-14deg); }
 @media (max-width: 980px) { .bonus__grid { grid-template-columns: 1fr; } }
 
 .bonus__tag {

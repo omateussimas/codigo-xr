@@ -95,6 +95,21 @@
   }
   window.addEventListener('scroll', onScrollHeader, { passive: true });
 
+  /* ---------- Campo "Outros" do objetivo ---------- */
+  var objetivoSelect = document.getElementById('objetivo');
+  var objetivoOutroRow = document.getElementById('objetivoOutroRow');
+  var objetivoOutroInput = document.getElementById('objetivoOutro');
+  function syncObjetivoOutro() {
+    if (!objetivoSelect || !objetivoOutroRow) return;
+    var isOutros = objetivoSelect.value === 'Outros';
+    objetivoOutroRow.hidden = !isOutros;
+    if (objetivoOutroInput) {
+      objetivoOutroInput.required = isOutros;
+      if (!isOutros) objetivoOutroInput.value = '';
+    }
+  }
+  if (objetivoSelect) objetivoSelect.addEventListener('change', syncObjetivoOutro);
+
   /* ---------- Formulário de contato ----------
      Front-end pronto: valida os campos e exibe a confirmação.
      Antes de publicar, conecte o envio a um endpoint real
@@ -117,6 +132,7 @@
       setTimeout(function () {
         feedback.classList.add('is-visible');
         form.reset();
+        syncObjetivoOutro();
         submitBtn.disabled = false;
         submitBtn.style.opacity = '';
       }, 500);

@@ -340,7 +340,7 @@
         <h3>Permanência no imóvel durante todo o processo</h3>
         <ul>
           <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Contrato de 12 a 18 meses permitindo que você continue utilizando o imóvel</li>
-          <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Pagamento de aluguel mensal de 0% a 7% do valor liberado na operação</li>
+          <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Pagamento de aluguel mensal de 0,7% do valor liberado na operação</li>
           <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Tempo estratégico para reorganizar completamente sua vida financeira</li>
           <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Possibilidade de recompra conforme condições contratuais estabelecidas</li>
         </ul>
@@ -381,7 +381,7 @@
 
     <div class="oferta__nota">
       <svg viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4.5 8-11V5l-8-3-8 3v6c0 6.5 8 11 8 11z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      <p><strong>O Sistema P.A.L™ vai além de um empréstimo tradicional:</strong> é uma solução de inteligência patrimonial que permite que você use 100% dos seus ativos imobiliários como o poder de negociação que eles realmente representam.</p>
+      <p><strong>O Sistema P.A.L™ não é um empréstimo tradicional.</strong> É uma solução de inteligência patrimonial que permite que você use 100% dos seus ativos imobiliários para destravar liquidez, quitar dívidas caras e/ou investir em outras frentes de negócios.</p>
     </div>
   </div>
 </section>
@@ -608,19 +608,19 @@
       <span class="card-bonus__num">1</span>
       <h3>Consultoria estratégica de reorganização financeira</h3>
       <p>Sessão individual com especialista em reestruturação patrimonial para definir a ordem de quitação das dívidas e a estratégia dos próximos 12 a 18 meses.</p>
-      <div class="card-bonus__valor"><span>Valor de referência</span><strong>R$ 8.500</strong></div>
+      <div class="card-bonus__valor"><span>Valor de referência</span><strong class="valor-oculto">R$ 8.500</strong></div>
     </article>
     <article class="card-bonus">
       <span class="card-bonus__num">2</span>
       <h3>Análise tributária personalizada</h3>
       <p>Estudo das implicações fiscais da operação, com orientações para reduzir custos tributários dentro da legislação vigente.</p>
-      <div class="card-bonus__valor"><span>Valor de referência</span><strong>R$ 6.200</strong></div>
+      <div class="card-bonus__valor"><span>Valor de referência</span><strong class="valor-oculto">R$ 6.200</strong></div>
     </article>
     <article class="card-bonus">
       <span class="card-bonus__num">3</span>
       <h3>Roteiro de proteção patrimonial</h3>
       <p>Guia elaborado com apoio jurídico especializado para orientar a proteção dos ativos durante o período de reorganização.</p>
-      <div class="card-bonus__valor"><span>Valor de referência</span><strong>R$ 4.800</strong></div>
+      <div class="card-bonus__valor"><span>Valor de referência</span><strong class="valor-oculto">R$ 4.800</strong></div>
     </article>
   </div>
 
@@ -778,6 +778,29 @@
             <div class="form-row">
               <label for="cidade">Cidade / Estado</label>
               <input type="text" id="cidade" name="cidade" autocomplete="address-level2" required>
+            </div>
+            <div class="form-row">
+              <label for="documentacao">Você possui a documentação do imóvel? (Matrícula, IPTU, boleto do condomínio e fotos)</label>
+              <select id="documentacao" name="documentacao" required>
+                <option value="" disabled selected>Selecione uma opção</option>
+                <option>Sim, tenho toda a documentação</option>
+                <option>Tenho algumas, mas está incompleta</option>
+                <option>Não tenho a documentação</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <label for="objetivo">Qual o seu objetivo?</label>
+              <select id="objetivo" name="objetivo" required>
+                <option value="" disabled selected>Selecione uma opção</option>
+                <option>Quero quitar meu Home Cash</option>
+                <option>Quero quitar dívidas caras</option>
+                <option>Quero investir</option>
+                <option value="Outros">Outros</option>
+              </select>
+            </div>
+            <div class="form-row" id="objetivoOutroRow" hidden>
+              <label for="objetivoOutro">Conte rapidamente qual é o seu objetivo</label>
+              <input type="text" id="objetivoOutro" name="objetivoOutro" placeholder="Descreva em poucas palavras">
             </div>
 
             <button type="submit" class="btn btn--full">
