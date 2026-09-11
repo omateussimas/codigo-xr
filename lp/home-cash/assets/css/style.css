@@ -422,17 +422,6 @@ h3 { font-size: clamp(1.25rem, 1.6vw, 1.55rem); }
 }
 .hero h1 em { font-style: normal; color: var(--azul); }
 
-.hero__iframe-wrap {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-}
-.hero__iframe-wrap iframe {
-  width: 100%;
-  height: 100%;
-  border: 0;
-  display: block;
-}
 .hero__sub {
   margin-top: 22px;
   color: var(--claro-80);
@@ -447,9 +436,13 @@ h3 { font-size: clamp(1.25rem, 1.6vw, 1.55rem); }
   border-radius: var(--r-xl);
   overflow: hidden;
   aspect-ratio: 4 / 5;
-  background-size: cover;
-  background-position: center;
   background-color: var(--marinho-900);
+}
+.hero__visual video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 .hero__visual::after {
   content: '';

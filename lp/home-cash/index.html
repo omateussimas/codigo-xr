@@ -22,12 +22,10 @@
 <link rel="preload" href="/lp/home-cash/assets/fonts/Archetica-Bold.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/lp/home-cash/assets/fonts/Archetica-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/lp/home-cash/assets/fonts/MaximaNouva-Regular.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="https://i.ytimg.com/vi/A2Zrbodg-Ks/hqdefault.jpg" as="image" fetchpriority="high">
-<link rel="preload" href="/lp/home-cash/assets/css/style.css?v=97f13a7e" as="style">
-<link rel="preconnect" href="https://www.youtube-nocookie.com">
-<link rel="preconnect" href="https://i.ytimg.com">
+<link rel="preload" href="/lp/home-cash/assets/img/hero-video-poster.jpg" as="image" fetchpriority="high">
+<link rel="preload" href="/lp/home-cash/assets/css/style.css?v=cc5356e6" as="style">
 
-<link rel="stylesheet" href="/lp/home-cash/assets/css/style.css?v=97f13a7e">
+<link rel="stylesheet" href="/lp/home-cash/assets/css/style.css?v=cc5356e6">
 </head>
 <body>
 
@@ -110,15 +108,17 @@
         </div>
       </div>
 
-      <div class="hero__visual" id="heroVisual" style="background-image:url('https://i.ytimg.com/vi/A2Zrbodg-Ks/hqdefault.jpg')">
-        <div class="hero__iframe-wrap">
-          <iframe
-            src="https://www.youtube-nocookie.com/embed/A2Zrbodg-Ks?autoplay=1&mute=1&loop=1&playlist=A2Zrbodg-Ks&controls=1&rel=0&modestbranding=1&iv_load_policy=3&disablekb=1&playsinline=1"
-            title="Vídeo de apresentação Código XR Capital"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-            loading="eager"></iframe>
-        </div>
+      <div class="hero__visual" id="heroVisual">
+        <video
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="auto"
+          poster="/lp/home-cash/assets/img/hero-video-poster.jpg"
+          aria-label="Vídeo de apresentação Código XR Capital">
+          <source src="/lp/home-cash/assets/video/hero-apresentacao.mp4" type="video/mp4">
+        </video>
         <div class="hero__floatcard">
           <div class="hero__floatcard-stars" aria-hidden="true">
             <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6L10 1z"/></svg>
