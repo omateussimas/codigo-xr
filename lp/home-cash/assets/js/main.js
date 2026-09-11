@@ -1,6 +1,22 @@
 (function () {
   'use strict';
 
+  /* ---------- Som do vídeo do hero ----------
+     Navegadores bloqueiam autoplay com áudio; o vídeo começa mudo
+     e a pessoa ativa o som com um clique (gesto exigido pelo navegador). */
+  var heroSoundBtn = document.getElementById('heroSoundBtn');
+  var heroVideo = document.querySelector('#heroVisual video');
+  if (heroSoundBtn && heroVideo) {
+    heroSoundBtn.addEventListener('click', function () {
+      heroVideo.muted = !heroVideo.muted;
+      var unmuted = !heroVideo.muted;
+      heroSoundBtn.classList.toggle('is-unmuted', unmuted);
+      heroSoundBtn.setAttribute('aria-pressed', String(unmuted));
+      heroSoundBtn.setAttribute('aria-label', unmuted ? 'Desativar som do vídeo' : 'Ativar som do vídeo');
+      if (unmuted) heroVideo.play();
+    });
+  }
+
   /* ---------- Mobile nav ---------- */
   var navToggle = document.getElementById('navToggle');
   var mobileNav = document.getElementById('mobileNav');
