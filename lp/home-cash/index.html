@@ -108,14 +108,13 @@
         </div>
       </div>
 
-      <div class="hero__visual">
+      <div class="hero__visual" id="heroVisual" data-yt-id="A2Zrbodg-Ks">
         <picture>
           <source srcset="/lp/home-cash/assets/img/hero-principal.webp" type="image/webp">
           <img src="/lp/home-cash/assets/img/hero-principal.jpg" alt="Empresário em ambiente corporativo, representando o cliente Código XR Capital" width="1600" height="893" fetchpriority="high">
         </picture>
-        <!-- NOTA PARA O CLIENTE: espaço reservado para a VSL (vídeo de vendas).
-             Substituir a imagem estática e este botão por um player de vídeo real. -->
-        <button class="hero__play" type="button" aria-label="Assistir à apresentação em vídeo">
+        <div class="hero__iframe-wrap" id="heroIframeWrap"></div>
+        <button class="hero__play" type="button" id="heroPlayBtn" aria-label="Assistir ao vídeo de apresentação">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
         </button>
         <div class="hero__floatcard">
@@ -757,6 +756,8 @@
           <p class="form-card__sub">Leva menos de 2 minutos</p>
 
           <form id="formContato" novalidate>
+            <input type="text" name="website" id="website" autocomplete="off" tabindex="-1" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" aria-hidden="true">
+            <input type="hidden" name="carimbo" id="carimbo">
             <div class="form-row">
               <label for="nome">Nome completo</label>
               <input type="text" id="nome" name="nome" autocomplete="name" required>
@@ -862,6 +863,6 @@
   </div>
 </footer>
 
-<script src="/lp/home-cash/assets/js/main.js?v=6fea5700" defer></script>
+<script src="/lp/home-cash/assets/js/main.js?v=0f29d6a5" defer></script>
 </body>
 </html>

@@ -1,6 +1,24 @@
 (function () {
   'use strict';
 
+  /* ---------- Vídeo do hero (YouTube, carregado só ao clicar) ---------- */
+  var heroVisual = document.getElementById('heroVisual');
+  var heroPlayBtn = document.getElementById('heroPlayBtn');
+  var heroIframeWrap = document.getElementById('heroIframeWrap');
+  if (heroVisual && heroPlayBtn && heroIframeWrap) {
+    heroPlayBtn.addEventListener('click', function () {
+      var ytId = heroVisual.getAttribute('data-yt-id');
+      if (!ytId) return;
+      var iframe = document.createElement('iframe');
+      iframe.src = 'https://www.youtube-nocookie.com/embed/' + ytId + '?autoplay=1&rel=0&playsinline=1';
+      iframe.title = 'Vídeo de apresentação Código XR Capital';
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+      iframe.allowFullscreen = true;
+      heroIframeWrap.appendChild(iframe);
+      heroVisual.classList.add('is-playing');
+    });
+  }
+
   /* ---------- Mobile nav ---------- */
   var navToggle = document.getElementById('navToggle');
   var mobileNav = document.getElementById('mobileNav');
@@ -111,12 +129,16 @@
   if (objetivoSelect) objetivoSelect.addEventListener('change', syncObjetivoOutro);
 
   /* ---------- Formulário de contato ----------
-     Front-end pronto: valida os campos e exibe a confirmação.
-     Antes de publicar, conecte o envio a um endpoint real
-     (CRM, planilha, webhook ou serviço de e-mail) substituindo
-     o bloco abaixo por uma chamada fetch() para esse endpoint. */
+     Envia o lead para a planilha do Google Sheets (via Apps Script),
+     que por sua vez alimenta o Pluga e o RD Station CRM.
+     Ver integracao-crm/google-apps-script.gs para o código do outro lado. */
+  var SHEETS_ENDPOINT = 'COLE_AQUI_A_URL_DO_APP_DA_WEB';
+
   var form = document.getElementById('formContato');
   var feedback = document.getElementById('formFeedback');
+  var carimboInput = document.getElementById('carimbo');
+  if (carimboInput) carimboInput.value = String(Date.now());
+
   if (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
@@ -128,14 +150,26 @@
       submitBtn.disabled = true;
       submitBtn.style.opacity = '.7';
 
-      // Placeholder de envio. Substituir por integração real.
-      setTimeout(function () {
+      var dados = new FormData(form);
+      dados.append('pagina', window.location.href);
+
+      function finalizarEnvio() {
         feedback.classList.add('is-visible');
         form.reset();
+        if (carimboInput) carimboInput.value = String(Date.now());
         syncObjetivoOutro();
         submitBtn.disabled = false;
         submitBtn.style.opacity = '';
-      }, 500);
+      }
+
+      // mode: 'no-cors' porque o Apps Script não devolve cabeçalhos de CORS;
+      // a resposta fica opaca (não dá pra ler o corpo), mas o envio funciona.
+      // Erro de rede real (ex: sem internet) ainda cai no catch.
+      fetch(SHEETS_ENDPOINT, { method: 'POST', mode: 'no-cors', body: dados })
+        .catch(function (erro) {
+          console.error('Falha ao enviar lead para a planilha:', erro);
+        })
+        .finally(finalizarEnvio);
     });
   }
 })();
