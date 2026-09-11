@@ -1,24 +1,6 @@
 (function () {
   'use strict';
 
-  /* ---------- Vídeo do hero (YouTube, carregado só ao clicar) ---------- */
-  var heroVisual = document.getElementById('heroVisual');
-  var heroPlayBtn = document.getElementById('heroPlayBtn');
-  var heroIframeWrap = document.getElementById('heroIframeWrap');
-  if (heroVisual && heroPlayBtn && heroIframeWrap) {
-    heroPlayBtn.addEventListener('click', function () {
-      var ytId = heroVisual.getAttribute('data-yt-id');
-      if (!ytId) return;
-      var iframe = document.createElement('iframe');
-      iframe.src = 'https://www.youtube-nocookie.com/embed/' + ytId + '?autoplay=1&rel=0&playsinline=1';
-      iframe.title = 'Vídeo de apresentação Código XR Capital';
-      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-      iframe.allowFullscreen = true;
-      heroIframeWrap.appendChild(iframe);
-      heroVisual.classList.add('is-playing');
-    });
-  }
-
   /* ---------- Mobile nav ---------- */
   var navToggle = document.getElementById('navToggle');
   var mobileNav = document.getElementById('mobileNav');
