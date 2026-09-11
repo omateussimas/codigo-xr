@@ -475,7 +475,7 @@ h3 { font-size: clamp(1.25rem, 1.6vw, 1.55rem); }
 
 .hero__tagcard {
   position: absolute;
-  left: 18px; bottom: 18px;
+  left: 18px; bottom: 46px;
   z-index: 2;
   background: var(--papel-puro);
   border-radius: var(--r-md);
