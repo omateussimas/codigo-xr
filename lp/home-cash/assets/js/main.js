@@ -130,7 +130,7 @@
      Envia o lead para a planilha do Google Sheets (via Apps Script),
      que por sua vez alimenta o Pluga e o RD Station CRM.
      Ver integracao-crm/google-apps-script.gs para o código do outro lado. */
-  var SHEETS_ENDPOINT = 'COLE_AQUI_A_URL_DO_APP_DA_WEB';
+  var SHEETS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbx_14C_4FlCic9boQlzPPTm6jfAyu_IfH4q9cp5wMmd6ICCJledNWduXwK1XBAWMhtl/exec';
 
   var form = document.getElementById('formContato');
   var feedback = document.getElementById('formFeedback');
