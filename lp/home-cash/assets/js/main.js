@@ -164,10 +164,14 @@
       // a resposta fica opaca (não dá pra ler o corpo), mas o envio funciona.
       // Erro de rede real (ex: sem internet) ainda cai no catch.
       fetch(SHEETS_ENDPOINT, { method: 'POST', mode: 'no-cors', body: dados })
+        .then(function () {
+          if (typeof fbq === 'function') fbq('track', 'Lead');
+          finalizarEnvio();
+        })
         .catch(function (erro) {
           console.error('Falha ao enviar lead para a planilha:', erro);
-        })
-        .finally(finalizarEnvio);
+          finalizarEnvio();
+        });
     });
   }
 })();
