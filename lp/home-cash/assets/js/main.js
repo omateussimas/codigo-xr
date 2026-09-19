@@ -151,27 +151,19 @@
       var dados = new FormData(form);
       dados.append('pagina', window.location.href);
 
-      function finalizarEnvio() {
-        feedback.classList.add('is-visible');
-        form.reset();
-        if (carimboInput) carimboInput.value = String(Date.now());
-        syncObjetivoOutro();
-        submitBtn.disabled = false;
-        submitBtn.style.opacity = '';
-      }
+      var URL_OBRIGADO = '/lp/home-cash/obrigado/';
 
-      // mode: 'no-cors' porque o Apps Script não devolve cabeçalhos de CORS;
-      // a resposta fica opaca (não dá pra ler o corpo), mas o envio funciona.
-      // Erro de rede real (ex: sem internet) ainda cai no catch.
-      fetch(SHEETS_ENDPOINT, { method: 'POST', mode: 'no-cors', body: dados })
-        .then(function () {
-          if (typeof fbq === 'function') fbq('track', 'Lead');
-          finalizarEnvio();
-        })
-        .catch(function (erro) {
-          console.error('Falha ao enviar lead para a planilha:', erro);
-          finalizarEnvio();
-        });
+      // mode: 'no-cors' porque o Apps Script não devolve cabeçalhos de CORS.
+      // keepalive faz o envio terminar mesmo com a página trocando, então o
+      // redirecionamento para o obrigado é imediato. O evento Lead do Meta
+      // Pixel dispara na própria página de obrigado.
+      try {
+        fetch(SHEETS_ENDPOINT, { method: 'POST', mode: 'no-cors', body: dados, keepalive: true })
+          .catch(function (erro) { console.error('Falha ao enviar lead para a planilha:', erro); });
+      } catch (erro) {
+        console.error('Falha ao enviar lead para a planilha:', erro);
+      }
+      window.location.href = URL_OBRIGADO;
     });
   }
 })();
