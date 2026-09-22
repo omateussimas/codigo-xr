@@ -1,6 +1,40 @@
 (function () {
   'use strict';
 
+  /* Abre anúncios da Meta sempre no topo da landing page */
+  var parametrosUrl = new URLSearchParams(window.location.search);
+  var acessoPelaMeta = parametrosUrl.get('utm_source') === 'meta';
+
+  if (acessoPelaMeta) {
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+
+    function abrirNoTopo() {
+      if (window.location.hash) {
+        history.replaceState(
+          null,
+          '',
+          window.location.pathname + window.location.search
+        );
+      }
+
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'auto'
+      });
+    }
+
+    abrirNoTopo();
+
+    window.addEventListener('pageshow', abrirNoTopo, { once: true });
+
+    window.addEventListener('load', function () {
+      setTimeout(abrirNoTopo, 100);
+    }, { once: true });
+  }
+
   /* ---------- Som do vídeo do hero ----------
      Navegadores bloqueiam autoplay com áudio; o vídeo começa mudo
      e a pessoa ativa o som com um clique (gesto exigido pelo navegador). */
